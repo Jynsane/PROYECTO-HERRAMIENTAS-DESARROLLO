@@ -1,0 +1,899 @@
+/* ==========================================================================
+   SUPKEIKS - Pastelería Boutique | Hoja de Estilos Principal
+   Diseño: Moderno, Cálido, Gourmet & Elegante
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES CSS (Custom Properties / Design Tokens)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paleta Gourmet: Crema, Miel/Oro, Rosa Pastel, Chocolate Intenso */
+  --color-primary: #D4A373;         /* Acento dorado cálido / caramelo */
+  --color-primary-hover: #E0B589;   /* Dorado iluminado */
+  --color-secondary: #E5989B;       /* Rosa pastel aterciopelado */
+  --color-accent-terracotta: #B5838D;
+  --color-dark-bg: #140E0C;         /* Chocolate espresso profundo */
+  --color-dark-surface: #1E1513;    /* Chocolate intermedio */
+  --color-dark-card: rgba(36, 23, 21, 0.85);
+  
+  --color-cream-light: #FFFDF9;     /* Crema vainilla claro */
+  --color-cream-bg: #FDF8F0;        /* Vainilla suave para fondos */
+  --color-cream-muted: #EADBC8;     /* Vainilla apagada / bordes */
+  
+  --color-text-light: #FFFFFF;
+  --color-text-muted: rgba(255, 255, 255, 0.82);
+  --color-text-dark: #2B1D19;
+  --color-text-dark-muted: #6B554F;
+
+  /* Tipografías */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Transiciones y Sombras */
+  --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 20px rgba(212, 163, 115, 0.4);
+
+  /* Dimensiones */
+  --header-height: 80px;
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 24px;
+  --border-radius-pill: 999px;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & ESTILOS BASE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. BOTONES & COMPONENTES REUTILIZABLES
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 26px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: var(--border-radius-pill);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #C68B59 100%);
+  color: var(--color-dark-bg);
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(212, 163, 115, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--color-primary-hover) 0%, var(--color-primary) 100%);
+  box-shadow: var(--shadow-glow);
+  color: #120907;
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-cream-light);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: var(--color-cream-light);
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+
+.btn-large {
+  padding: 15px 34px;
+  font-size: 1.05rem;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.icon-whatsapp {
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. HEADER / NAVEGACIÓN
+   -------------------------------------------------------------------------- */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  background: rgba(20, 14, 12, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212, 163, 115, 0.2);
+  transition: all var(--transition-normal);
+}
+
+.main-header.scrolled {
+  background: rgba(18, 12, 10, 0.92);
+  border-bottom-color: rgba(212, 163, 115, 0.35);
+  box-shadow: var(--shadow-lg);
+  height: 72px;
+}
+
+.header-container {
+  max-width: 1300px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Marca / Logo */
+.brand-logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1.1;
+  position: relative;
+  z-index: 1010;
+}
+
+.brand-logo .logo-icon {
+  font-size: 1.6rem;
+  margin-bottom: -2px;
+}
+
+.brand-logo .logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--color-cream-light);
+  background: linear-gradient(135deg, #FFFDF9 20%, var(--color-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+.brand-logo .logo-tagline {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--color-primary);
+  margin-top: 1px;
+}
+
+/* Enlaces de Navegación */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  position: relative;
+  padding: 6px 0;
+  letter-spacing: 0.4px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width var(--transition-normal);
+  border-radius: 2px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-cream-light);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.mobile-cta-wrapper {
+  display: none;
+}
+
+/* Acciones del Header */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Botón Hamburguesa */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 22px;
+  padding: 0;
+  z-index: 1010;
+}
+
+.hamburger-btn .bar {
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--color-cream-light);
+  border-radius: 3px;
+  transition: all var(--transition-normal);
+  transform-origin: center;
+}
+
+/* Animación Hamburguesa activa */
+.hamburger-btn.is-active .bar-1 {
+  transform: translateY(10px) rotate(45deg);
+  background-color: var(--color-primary);
+}
+
+.hamburger-btn.is-active .bar-2 {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.hamburger-btn.is-active .bar-3 {
+  transform: translateY(-10px) rotate(-45deg);
+  background-color: var(--color-primary);
+}
+
+.menu-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.menu-backdrop.is-active {
+  display: block;
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   5. CARRUSEL / HERO SLIDER PRINCIPAL
+   -------------------------------------------------------------------------- */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 640px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Barra de progreso de cambio de diapositiva */
+.slider-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  width: 0;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  z-index: 1100;
+  transition: width 0.1s linear;
+}
+
+/* Wrapper y Diapositivas */
+.slides-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), visibility 1.2s;
+  display: flex;
+  align-items: center;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+/* Imagen de Fondo y Efecto Zoom (Ken Burns) */
+.slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  transform: scale(1);
+  transition: transform 8s cubic-bezier(0.1, 0.5, 0.2, 1);
+  will-change: transform;
+}
+
+.slide.active .slide-bg {
+  transform: scale(1.08);
+}
+
+/* Capa oscura con degradado refinado */
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 12, 10, 0.72) 0%,
+    rgba(20, 14, 12, 0.42) 40%,
+    rgba(15, 9, 8, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+/* Contenido de la Diapositiva */
+.slide-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 28px;
+  padding-top: calc(var(--header-height) * 0.7);
+}
+
+.slide-content {
+  max-width: 760px;
+}
+
+/* Insignia / Badge */
+.slide-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: var(--border-radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: rgba(212, 163, 115, 0.2);
+  color: var(--color-cream-muted);
+  border: 1px solid rgba(212, 163, 115, 0.4);
+  backdrop-filter: blur(6px);
+  margin-bottom: 18px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+/* Títulos con animación suave */
+.slide-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 5.5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-cream-light);
+  margin-bottom: 18px;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+}
+
+.slide-title .highlight {
+  color: var(--color-primary);
+  font-style: italic;
+  display: inline;
+}
+
+/* Descripción */
+.slide-description {
+  font-size: clamp(1rem, 2vw, 1.22rem);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 32px;
+  max-width: 620px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
+}
+
+/* Botones de acción */
+.slide-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease 0.8s, transform 0.8s ease 0.8s;
+}
+
+/* Animaciones al activarse el slide */
+.slide.active .slide-badge,
+.slide.active .slide-title,
+.slide.active .slide-description,
+.slide.active .slide-buttons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   6. CONTROLES DEL CARRUSEL (Flechas y Dots)
+   -------------------------------------------------------------------------- */
+/* Flechas de navegación */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 17, 15, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-cream-light);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all var(--transition-normal);
+}
+
+.slider-arrow:hover {
+  background: rgba(212, 163, 115, 0.9);
+  color: var(--color-dark-bg);
+  border-color: var(--color-primary);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: var(--shadow-glow);
+}
+
+.slider-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.slider-arrow-prev {
+  left: 28px;
+}
+
+.slider-arrow-next {
+  right: 28px;
+}
+
+/* Indicadores / Dots */
+.slider-indicators {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(18, 12, 10, 0.45);
+  border-radius: var(--border-radius-pill);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.slider-dot {
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot-inner {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.45);
+  transition: all var(--transition-normal);
+}
+
+.slider-dot:hover .dot-inner {
+  background-color: var(--color-cream-light);
+}
+
+.slider-dot.active .dot-inner {
+  width: 32px;
+  border-radius: 10px;
+  background-color: var(--color-primary);
+  box-shadow: 0 0 10px rgba(212, 163, 115, 0.7);
+}
+
+/* Indicador de scroll (hint) */
+.scroll-hint {
+  position: absolute;
+  bottom: 24px;
+  right: 36px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.75;
+  transition: opacity var(--transition-normal);
+}
+
+.scroll-hint:hover {
+  opacity: 1;
+}
+
+.scroll-text {
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-cream-muted);
+}
+
+.scroll-mouse {
+  width: 20px;
+  height: 32px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-wheel {
+  width: 3px;
+  height: 6px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  margin-top: 6px;
+  animation: scrollAnim 1.8s infinite;
+}
+
+@keyframes scrollAnim {
+  0% { opacity: 1; transform: translateY(0); }
+  75% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 0; transform: translateY(0); }
+}
+
+/* --------------------------------------------------------------------------
+   7. SECCIÓN DE VISTA PREVIA (Especialidades / Preview)
+   -------------------------------------------------------------------------- */
+.preview-section {
+  padding: 90px 24px;
+  background-color: #17100e;
+  border-top: 1px solid rgba(212, 163, 115, 0.15);
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 56px;
+}
+
+.section-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: var(--color-cream-light);
+  margin-bottom: 14px;
+}
+
+.section-subheading {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 28px;
+}
+
+.feature-card {
+  background: rgba(30, 21, 19, 0.7);
+  border: 1px solid rgba(212, 163, 115, 0.18);
+  border-radius: var(--border-radius-md);
+  padding: 36px 28px;
+  text-align: center;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212, 163, 115, 0.45);
+  box-shadow: var(--shadow-lg);
+  background: rgba(36, 25, 23, 0.95);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.feature-icon {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-cream-light);
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  color: var(--color-text-muted);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   8. FOOTER
+   -------------------------------------------------------------------------- */
+.main-footer {
+  background-color: var(--color-dark-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 50px 24px 30px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-cream-light);
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.footer-brand p {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  max-width: 420px;
+}
+
+.footer-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  color: var(--color-cream-muted);
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  width: 100%;
+  padding-top: 24px;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   9. RESPONSIVIDAD (Media Queries - Mobile First & Adapts)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .scroll-hint {
+    display: none;
+  }
+}
+
+@media (max-width: 880px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  /* Hamburguesa visible */
+  .hamburger-btn {
+    display: flex;
+  }
+
+  /* Ocultar botón CTA del header en móvil para no saturar la barra superior */
+  #btnCtaDesktop {
+    display: none;
+  }
+
+  /* Menú Móvil Desplegable tipo Drawer Lateral Elegante */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 290px;
+    height: 100vh;
+    background: rgba(22, 15, 13, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.7);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 30px 40px;
+    transition: right var(--transition-normal);
+    z-index: 999;
+    border-left: 1px solid rgba(212, 163, 115, 0.25);
+  }
+
+  .nav-menu.is-open {
+    right: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    width: 100%;
+  }
+
+  .nav-link {
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  .mobile-cta-wrapper {
+    display: block;
+    width: 100%;
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Flechas más compactas para touch */
+  .slider-arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .slider-arrow-prev {
+    left: 14px;
+  }
+
+  .slider-arrow-next {
+    right: 14px;
+  }
+
+  .slide-container {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .slide-content {
+    margin: 0 auto;
+  }
+
+  .slide-buttons {
+    justify-content: center;
+  }
+
+  .slide-buttons .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-title {
+    font-size: 2.1rem;
+  }
+
+  .slide-description {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
+  .slider-indicators {
+    bottom: 24px;
+  }
+}

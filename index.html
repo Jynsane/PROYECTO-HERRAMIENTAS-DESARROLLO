@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUPKEIKS | Pastelería Fina & Repostería Artesanal</title>
+  <meta name="description" content="SUPKEIKS - Pastelería fina, cupcakes gourmet y tortas personalizadas hechas con pasión, recetas artesanales y los mejores ingredientes.">
+  
+  <!-- Google Fonts: Playfair Display & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Hoja de Estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header / Barra de Navegación Principal -->
+  <header class="main-header" id="mainHeader">
+    <div class="header-container">
+      <!-- Logo de la Marca -->
+      <a href="#inicio" class="brand-logo" aria-label="SUPKEIKS Inicio">
+        <span class="logo-icon">🧁</span>
+        <span class="logo-text">SUPKEIKS</span>
+        <span class="logo-tagline">PASTELERÍA BOUTIQUE</span>
+      </a>
+
+      <!-- Menú de Navegación (Desktop) -->
+      <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li class="nav-item"><a href="#catalogo" class="nav-link">Catálogo</a></li>
+          <li class="nav-item"><a href="#especialidades" class="nav-link">Especialidades</a></li>
+          <li class="nav-item"><a href="#nosotros" class="nav-link">Nosotros</a></li>
+          <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+        <!-- CTA exclusivo móvil dentro del menú desplegable -->
+        <div class="mobile-cta-wrapper">
+          <a href="https://wa.me/51999999999?text=Hola%20SUPKEIKS!%20Deseo%20hacer%20un%20pedido%20especial" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">
+            <span>Escríbenos por WhatsApp</span>
+            <svg class="icon-whatsapp" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.076-2.029-.475-1.708-.704-2.813-2.457-2.899-2.572-.084-.116-.693-.924-.693-1.762 0-.838.438-1.25.594-1.423.156-.172.342-.216.456-.216.114 0 .228.001.328.006.105.006.246-.04.384.292.144.348.492 1.2.535 1.288.043.088.072.19.014.306-.058.116-.087.189-.173.29-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.972 1.21.669.596 1.233.781 1.408.868.174.088.276.073.379-.044.102-.116.438-.51.554-.685.116-.175.233-.146.39-.088.157.058.995.469 1.167.555.172.086.286.13.329.202.043.073.043.42-.101.825zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.396C8.423 21.499 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Botón de Acción Rápida (Desktop CTA) -->
+      <div class="header-actions">
+        <a href="https://wa.me/51999999999?text=Hola%20SUPKEIKS!%20Deseo%20hacer%20un%20pedido%20especial" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btnCtaDesktop">
+          <span>Hacer Pedido</span>
+          <svg class="icon-whatsapp" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.076-2.029-.475-1.708-.704-2.813-2.457-2.899-2.572-.084-.116-.693-.924-.693-1.762 0-.838.438-1.25.594-1.423.156-.172.342-.216.456-.216.114 0 .228.001.328.006.105.006.246-.04.384.292.144.348.492 1.2.535 1.288.043.088.072.19.014.306-.058.116-.087.189-.173.29-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.972 1.21.669.596 1.233.781 1.408.868.174.088.276.073.379-.044.102-.116.438-.51.554-.685.116-.175.233-.146.39-.088.157.058.995.469 1.167.555.172.086.286.13.329.202.043.073.043.42-.101.825zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.396C8.423 21.499 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+          </svg>
+        </a>
+
+        <!-- Botón Hamburguesa Móvil -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navMenu">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Overlay para cerrar menú móvil al tocar afuera -->
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+
+  <!-- Hero Slider / Carrusel Principal a Pantalla Completa -->
+  <main>
+    <section class="hero-slider" id="inicio" aria-roledescription="carousel" aria-label="Destacados SUPKEIKS">
+      
+      <!-- Barra de Progreso del Autoplay -->
+      <div class="slider-progress-bar" id="sliderProgressBar" aria-hidden="true"></div>
+
+      <!-- Slides Container -->
+      <div class="slides-wrapper">
+        
+        <!-- Slide 1: Bienvenidos -->
+        <article class="slide active" role="group" aria-roledescription="slide" aria-label="1 de 3: Bienvenidos a SUPKEIKS" data-index="0">
+          <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1587668178277-295251f900ce?auto=format&fit=crop&w=1920&q=85');"></div>
+          <div class="slide-overlay"></div>
+          <div class="slide-container">
+            <div class="slide-content">
+              <span class="slide-badge">Repostería de Autor</span>
+              <h1 class="slide-title">Bienvenidos a <span class="highlight">SUPKEIKS</span></h1>
+              <p class="slide-description">Dulzura y arte en cada bocado. Creaciones mágicas para endulzar tus momentos inolvidables.</p>
+              <div class="slide-buttons">
+                <a href="#especialidades" class="btn btn-primary btn-large">
+                  <span>Ver Especialidades</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a href="#catalogo" class="btn btn-outline btn-large">Explorar Catálogo</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 2: Cupcakes & Tortas Personalizadas -->
+        <article class="slide" role="group" aria-roledescription="slide" aria-label="2 de 3: Cupcakes y Tortas Personalizadas" data-index="1">
+          <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=1920&q=85');"></div>
+          <div class="slide-overlay"></div>
+          <div class="slide-container">
+            <div class="slide-content">
+              <span class="slide-badge">Edición Exclusiva</span>
+              <h2 class="slide-title">Cupcakes & Tortas <span class="highlight">Personalizadas</span></h2>
+              <p class="slide-description">Diseños únicos para tus momentos más especiales. Celebra bodas, cumpleaños y fechas que merecen brillar.</p>
+              <div class="slide-buttons">
+                <a href="https://wa.me/51999999999?text=Hola%20SUPKEIKS!%20Deseo%20cotizar%20un%20diseño%20personalizado" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
+                  <span>Personalizar Pedido</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 20h9"></path>
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                  </svg>
+                </a>
+                <a href="#catalogo" class="btn btn-outline btn-large">Ver Galería</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 3: Ingredientes Seleccionados -->
+        <article class="slide" role="group" aria-roledescription="slide" aria-label="3 de 3: Ingredientes Seleccionados" data-index="2">
+          <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1920&q=85');"></div>
+          <div class="slide-overlay"></div>
+          <div class="slide-container">
+            <div class="slide-content">
+              <span class="slide-badge">100% Calidad Premium</span>
+              <h2 class="slide-title">Ingredientes <span class="highlight">Seleccionados</span></h2>
+              <p class="slide-description">Recetas artesanales con el mejor sabor. Mantequilla de primera, cacao puro y frutas frescas de estación.</p>
+              <div class="slide-buttons">
+                <a href="#contacto" class="btn btn-primary btn-large">
+                  <span>Contáctanos</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </a>
+                <a href="#nosotros" class="btn btn-outline btn-large">Nuestra Filosofía</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Flechas de Navegación Estilizadas -->
+      <button class="slider-arrow slider-arrow-prev" id="prevSlideBtn" aria-label="Slide anterior" title="Anterior">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <button class="slider-arrow slider-arrow-next" id="nextSlideBtn" aria-label="Siguiente slide" title="Siguiente">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Indicadores / Dots del Carrusel -->
+      <div class="slider-indicators" id="sliderDots" role="tablist" aria-label="Controles de diapositivas">
+        <button class="slider-dot active" role="tab" aria-selected="true" aria-label="Ir a diapositiva 1" data-slide-to="0">
+          <span class="dot-inner"></span>
+        </button>
+        <button class="slider-dot" role="tab" aria-selected="false" aria-label="Ir a diapositiva 2" data-slide-to="1">
+          <span class="dot-inner"></span>
+        </button>
+        <button class="slider-dot" role="tab" aria-selected="false" aria-label="Ir a diapositiva 3" data-slide-to="2">
+          <span class="dot-inner"></span>
+        </button>
+      </div>
+
+      <!-- Indicador de Desplazamiento (Scroll Down Hint) -->
+      <div class="scroll-hint" aria-hidden="true">
+        <span class="scroll-text">Descubre más</span>
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Pequeña sección de muestra para los enlaces ancla (#especialidades, #catalogo, etc.) -->
+    <section id="especialidades" class="preview-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-badge">Nuestra Pasión</span>
+          <h2 class="section-heading">Especialidades Hechas con Amor</h2>
+          <p class="section-subheading">Combinamos técnicas clásicas de pastelería europea con un toque contemporáneo y festivo.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🧁</div>
+            <h3>Gourmet Cupcakes</h3>
+            <p>Masa esponjosa, rellenos cremosos y decoraciones personalizadas en frosting sedoso.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎂</div>
+            <h3>Tortas Temáticas</h3>
+            <p>Elaboradas a la medida de tu celebración. Estilos vintage, minimalistas y buttercream art.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🍓</div>
+            <h3>Ingredientes Naturales</h3>
+            <p>Cero conservantes artificiales. Sabor auténtico con extracto de vainilla puro y frutas frescas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Simple y Elegante -->
+  <footer class="main-footer" id="contacto">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span>🧁</span> SUPKEIKS
+        </div>
+        <p>Arte dulce y pastelería fina elaborada artesanalmente cada día.</p>
+      </div>
+      <div class="footer-info">
+        <p><strong>Horario:</strong> Lun - Sáb: 9:00 AM - 8:00 PM</p>
+        <p><strong>Pedidos & Consultas:</strong> +51 999 999 999</p>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SUPKEIKS. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Principal de Comportamiento -->
+  <script src="script.js"></script>
+</body>
+</html>
