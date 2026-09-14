@@ -48,3 +48,9 @@
 * **Canales de atención:** Incorporación de tarjetas de horarios y teléfonos de atención.
 * **Formulario interactivo:** Captura y validación de consultas para clientes.
 * **Navegación:** Enlaces de retorno directo al Inicio y al Catálogo general.
+
+### Especialidades y Nosotros (index.html)
+* **Sección Especialidades:** Bloque con las categorías principales de productos (tortas, cupcakes, cheesecakes, tartas y brownies), cada una con imagen, descripción breve y enlace directo al catálogo.
+* **Franja de confianza:** Íconos informativos sobre delivery en Lima, reservas para eventos y el origen peruano de la pastelería.
+* **Sección Nosotros:** Historia de la marca, estadísticas (años de experiencia, pedidos entregados) y tarjetas con los valores de la pastelería.
+* **Estilos:** Nuevos componentes reutilizables (`product-card`, `about-grid`, `values-grid`) con efectos hover y ajustes responsive para móvil.
