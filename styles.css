@@ -1026,6 +1026,30 @@ button {
   z-index: 2;
 }
 
+.specialty-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: 0.3px;
+}
+
+.specialty-link svg {
+  transition: transform 0.25s ease;
+}
+
+.specialty-link:hover {
+  color: var(--color-primary-hover);
+}
+
+.specialty-link:hover svg {
+  transform: translateX(4px);
+}
+
 .admin-card {
   max-width: 700px;
   margin: 0 auto;
