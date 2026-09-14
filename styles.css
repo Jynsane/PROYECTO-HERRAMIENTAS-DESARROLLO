@@ -755,6 +755,11 @@ button {
   height: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
 }
 
 .about-content h3 {
@@ -812,6 +817,13 @@ button {
   border-radius: var(--border-radius-md);
   padding: 28px 22px;
   text-align: center;
+  transition: all var(--transition-normal);
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212, 163, 115, 0.45);
+  box-shadow: var(--shadow-lg);
 }
 
 .value-icon {
@@ -831,6 +843,16 @@ button {
   color: var(--color-text-muted);
   font-size: 0.88rem;
   line-height: 1.55;
+}
+
+@media (max-width: 880px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image img {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 /* --------------------------------------------------------------------------
