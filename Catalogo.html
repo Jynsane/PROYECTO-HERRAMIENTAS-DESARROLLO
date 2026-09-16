@@ -109,6 +109,24 @@
           diariamente con delivery en Lima.</p>
       </div>
 
+      <!-- Barra de Búsqueda y Filtros de Categoría -->
+      <div class="catalog-toolbar">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="catalogSearchInput" placeholder="Buscar por nombre o ingrediente..."
+            aria-label="Buscar producto">
+          <button id="btnClearSearch" class="btn-clear-search" style="display:none;"
+            aria-label="Limpiar búsqueda">&times;</button>
+        </div>
+        <div class="category-filters" id="categoryFilters" role="tablist">
+          <button class="filter-chip active" data-category="todos">Todos</button>
+          <button class="filter-chip" data-category="tortas">Tortas</button>
+          <button class="filter-chip" data-category="cupcakes">Cupcakes</button>
+          <button class="filter-chip" data-category="cheesecakes">Cheesecakes & Mousses</button>
+          <button class="filter-chip" data-category="tartas">Tartas & Pies</button>
+          <button class="filter-chip" data-category="individuales">Porciones</button>
+        </div>
+      </div>
 
       <!-- Grilla dinámica alimentada desde script.js -->
       <div class="features-grid" id="catalogProductGrid"></div>
