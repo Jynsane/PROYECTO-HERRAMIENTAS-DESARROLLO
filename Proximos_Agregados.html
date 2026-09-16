@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próximos Lanzamientos | SUPKEIKS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Header / Barra de Navegación -->
+<header class="main-header scrolled" id="mainHeader">
+    <div class="header-container">
+        <a href="index.html" class="brand-logo">
+            <span class="logo-icon">🧁</span>
+            <span class="logo-text">SUPKEIKS</span>
+            <span class="logo-tagline">PASTELERÍA BOUTIQUE</span>
+        </a>
+
+        <!-- Menú unificado -->
+        <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+
+                <li class="nav-item dropdown">
+                    <a href="Catalogo.html" class="nav-link active dropdown-toggle">
+                        Catálogo <span class="dropdown-arrow">▾</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Catalogo.html" class="dropdown-link">Ver Todo el Catálogo</a></li>
+                        <li><a href="Ofertas_Catalogo.html" class="dropdown-link">Ofertas Especiales</a></li>
+                        <li><a href="Proximos_Agregados.html" class="dropdown-link active">Próximos Lanzamientos</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a href="index.html#especialidades" class="nav-link">Especialidades</a></li>
+                <li class="nav-item"><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                <li class="nav-item"><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <a href="https://wa.me/51999999999?text=Hola%20SUPKEIKS!%20Deseo%20hacer%20un%20pedido" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <span>Hacer Pedido</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Contenido Próximos Lanzamientos -->
+<main style="padding-top: 120px; padding-bottom: 80px;">
+    <section class="section-container">
+        <div class="section-header">
+            <span class="section-badge">Próximamente</span>
+            <h1 class="section-heading">Nuevas Recetas en Creación</h1>
+            <p class="section-subheading">Nuevos sabores y recetas artesanales que se sumarán a nuestra carta muy pronto.</p>
+        </div>
+
+        <!-- Grilla de productos con el mismo diseño -->
+        <div class="features-grid" id="upcomingProductGrid"></div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-logo"><span>🧁</span> SUPKEIKS</div>
+        <p>&copy; 2026 SUPKEIKS. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
