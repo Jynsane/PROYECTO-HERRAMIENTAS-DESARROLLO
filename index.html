@@ -8,7 +8,7 @@
     <meta name="description"
         content="SUPKEIKS - Pastelería fina, cupcakes gourmet y tortas personalizadas hechas con pasión, recetas artesanales y los mejores ingredientes.">
 
-    <!-- Google Fonts: Playfair Display & Poppins -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -25,22 +25,35 @@
     <header class="main-header" id="mainHeader">
         <div class="header-container">
             <!-- Logo de la Marca -->
-            <a href="#inicio" class="brand-logo" aria-label="SUPKEIKS Inicio">
+            <a href="index.html" class="brand-logo" aria-label="SUPKEIKS Inicio">
                 <span class="logo-icon">🧁</span>
                 <span class="logo-text">SUPKEIKS</span>
                 <span class="logo-tagline">PASTELERÍA BOUTIQUE</span>
             </a>
 
-            <!-- Menú de Navegación (Desktop) -->
+            <!-- Menú de Navegación con Dropdown Integrado -->
             <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="#inicio" class="nav-link active">Inicio</a></li>
-                    <li class="nav-item"><a href="#catalogo" class="nav-link">Catálogo</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Inicio</a></li>
+
+                    <!-- Dropdown Catálogo -->
+                    <li class="nav-item dropdown">
+                        <a href="Catalogo.html" class="nav-link dropdown-toggle">
+                            Catálogo <span class="dropdown-arrow">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Catalogo.html" class="dropdown-link">Ver Todo el Catálogo</a></li>
+                            <li><a href="Ofertas_Catalogo.html" class="dropdown-link">Ofertas Especiales</a></li>
+                            <li><a href="Proximos_Agregados.html" class="dropdown-link">Próximos Lanzamientos</a></li>
+                        </ul>
+                    </li>
+
                     <li class="nav-item"><a href="#especialidades" class="nav-link">Especialidades</a></li>
                     <li class="nav-item"><a href="#nosotros" class="nav-link">Nosotros</a></li>
                     <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
-                <!-- CTA exclusivo móvil dentro del menú desplegable -->
+
+                <!-- CTA Móvil -->
                 <div class="mobile-cta-wrapper">
                     <a href="https://wa.me/51999999999?text=Hola%20SUPKEIKS!%20Deseo%20hacer%20un%20pedido%20especial"
                         target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">
@@ -53,9 +66,9 @@
                 </div>
             </nav>
 
-            <!-- Botón de Acción Rápida (Desktop CTA) -->
+            <!-- Desktop CTA -->
             <div class="header-actions">
-                <a href="https://wa.me/51984110884?text=Hola%20SUPKEIKS!%20Deseo%20hacer%20un%20pedido%20especial"
+                <a href="https://wa.me/51999999999?text=Hola%20SUPKEIKS!%20Deseo%20hacer%20un%20pedido%20especial"
                     target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btnCtaDesktop">
                     <span>Hacer Pedido</span>
                     <svg class="icon-whatsapp" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -74,21 +87,26 @@
             </div>
         </div>
     </header>
+    <!-- Botón Hamburguesa Móvil -->
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú de navegación" aria-expanded="false"
+        aria-controls="navMenu">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+    </button>
+    </div>
+    </div>
+    </header>
 
-    <!-- Overlay para cerrar menú móvil al tocar afuera -->
     <div class="menu-backdrop" id="menuBackdrop"></div>
 
-    <!-- Hero Slider / Carrusel Principal a Pantalla Completa -->
+    <!-- Hero Slider -->
     <main>
         <section class="hero-slider" id="inicio" aria-roledescription="carousel" aria-label="Destacados SUPKEIKS">
-
-            <!-- Barra de Progreso del Autoplay -->
             <div class="slider-progress-bar" id="sliderProgressBar" aria-hidden="true"></div>
 
-            <!-- Slides Container -->
             <div class="slides-wrapper">
-
-                <!-- Slide 1: Bienvenidos -->
+                <!-- Slide 1 -->
                 <article class="slide active" role="group" aria-roledescription="slide"
                     aria-label="1 de 3: Bienvenidos a SUPKEIKS" data-index="0">
                     <div class="slide-bg"
@@ -110,13 +128,13 @@
                                         <polyline points="12 5 19 12 12 19"></polyline>
                                     </svg>
                                 </a>
-                                <a href="#catalogo" class="btn btn-outline btn-large">Explorar Catálogo</a>
+                                <a href="Catalogo.html" class="btn btn-outline btn-large">Explorar Catálogo</a>
                             </div>
                         </div>
                     </div>
                 </article>
 
-                <!-- Slide 2: Cupcakes & Tortas Personalizadas -->
+                <!-- Slide 2 -->
                 <article class="slide" role="group" aria-roledescription="slide"
                     aria-label="2 de 3: Cupcakes y Tortas Personalizadas" data-index="1">
                     <div class="slide-bg"
@@ -126,26 +144,26 @@
                     <div class="slide-container">
                         <div class="slide-content">
                             <span class="slide-badge">Edición Exclusiva</span>
-                            <h2 class="slide-title">Cupcakes & Tortas <span class="highlight">Personalizadas</span></h2>
-                            <p class="slide-description">Diseños únicos para tus momentos más especiales. Celebra bodas,
-                                cumpleaños y fechas que merecen brillar.</p>
+                            <h2 class="slide-title">Ofertas de <span class="highlight">Temporada</span></h2>
+                            <p class="slide-description">Aprovecha nuestras promociones activas con descuentos de hasta
+                                el 30% en nuestra carta.</p>
                             <div class="slide-buttons">
-                                <a href="https://wa.me/51999999999?text=Hola%20SUPKEIKS!%20Deseo%20cotizar%20un%20diseño%20personalizado"
-                                    target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
-                                    <span>Personalizar Pedido</span>
+                                <a href="Ofertas_Catalogo.html" class="btn btn-primary btn-large">
+                                    <span>Ver Ofertas Especiales</span>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                         stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M12 20h9"></path>
                                         <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
                                     </svg>
                                 </a>
-                                <a href="#catalogo" class="btn btn-outline btn-large">Ver Galería</a>
+                                <a href="Proximos_Agregados.html" class="btn btn-outline btn-large">Próximos
+                                    Lanzamientos</a>
                             </div>
                         </div>
                     </div>
                 </article>
 
-                <!-- Slide 3: Ingredientes Seleccionados -->
+                <!-- Slide 3 -->
                 <article class="slide" role="group" aria-roledescription="slide"
                     aria-label="3 de 3: Ingredientes Seleccionados" data-index="2">
                     <div class="slide-bg"
@@ -173,10 +191,9 @@
                         </div>
                     </div>
                 </article>
-
             </div>
 
-            <!-- Flechas de Navegación Estilizadas -->
+            <!-- Controles del Slider -->
             <button class="slider-arrow slider-arrow-prev" id="prevSlideBtn" aria-label="Slide anterior"
                 title="Anterior">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -192,66 +209,239 @@
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
             </button>
+            <button class="slider-arrow slider-arrow-next" id="nextSlideBtn" aria-label="Siguiente slide"
+                title="Siguiente">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
 
-            <!-- Indicadores / Dots del Carrusel -->
             <div class="slider-indicators" id="sliderDots" role="tablist" aria-label="Controles de diapositivas">
                 <button class="slider-dot active" role="tab" aria-selected="true" aria-label="Ir a diapositiva 1"
-                    data-slide-to="0">
-                    <span class="dot-inner"></span>
-                </button>
+                    data-slide-to="0"><span class="dot-inner"></span></button>
                 <button class="slider-dot" role="tab" aria-selected="false" aria-label="Ir a diapositiva 2"
-                    data-slide-to="1">
-                    <span class="dot-inner"></span>
-                </button>
+                    data-slide-to="1"><span class="dot-inner"></span></button>
                 <button class="slider-dot" role="tab" aria-selected="false" aria-label="Ir a diapositiva 3"
-                    data-slide-to="2">
-                    <span class="dot-inner"></span>
-                </button>
+                    data-slide-to="2"><span class="dot-inner"></span></button>
             </div>
 
-            <!-- Indicador de Desplazamiento (Scroll Down Hint) -->
             <div class="scroll-hint" aria-hidden="true">
                 <span class="scroll-text">Descubre más</span>
                 <div class="scroll-mouse">
                     <div class="scroll-wheel"></div>
                 </div>
             </div>
-
         </section>
 
-        <!-- Pequeña sección de muestra para los enlaces ancla (#especialidades, #catalogo, etc.) -->
+        <!-- Sección Especialidades -->
         <section id="especialidades" class="preview-section">
             <div class="section-container">
                 <div class="section-header">
                     <span class="section-badge">Nuestra Pasión</span>
                     <h2 class="section-heading">Especialidades Hechas con Amor</h2>
-                    <p class="section-subheading">Combinamos técnicas clásicas de pastelería europea con un toque
-                        contemporáneo y festivo.</p>
+                    <p class="section-subheading">Pastelería peruana artesanal: recetas de casa con técnica de
+                        pastelería fina. Hacemos delivery en Lima y aceptamos reservas para tus eventos y celebraciones.
+                    </p>
                 </div>
                 <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🧁</div>
-                        <h3>Gourmet Cupcakes</h3>
-                        <p>Masa esponjosa, rellenos cremosos y decoraciones personalizadas en frosting sedoso.</p>
+                    <article class="feature-card product-card">
+                        <div class="product-image-container">
+                            <img src="https://www.infobae.com/resizer/v2/WYA2IKFGGJH3VJNMLKDHP57EKI.jpg?auth=d4158258757a240a168e3dd66a230ff2faf0316f2e9f2a13cbc0c18afdba1ba0&smart=true&width=1200&height=900&quality=85"
+                                alt="Tortas clásicas y temáticas" class="product-img">
+                        </div>
+                        <h3>Tortas Clásicas y Temáticas</h3>
+                        <p>Nuestra especialidad de siempre: bizcochos húmedos y rellenos generosos, en versiones como
+                            Chocolate con Frutas, Manjar, Tres Leches, Zanahoria y Selva Negra.</p>
+                        <a href="Catalogo.html" class="specialty-link">
+                            <span>Ver en el Catálogo</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </article>
+
+                    <article class="feature-card product-card">
+                        <div class="product-image-container">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs8eAG0-q6jIK9aTfb2Robeq0ATqIIgd7rdvEi0kawgZXk9dABl791AZM&s=10"
+                                alt="Cupcakes gourmet" class="product-img">
+                        </div>
+                        <h3>Cupcakes Gourmet</h3>
+                        <p>Perfectos para compartir o regalar, en presentación de 6 unidades y sabores como Vainilla
+                            Francesa y Choco-Avellana.</p>
+                        <a href="Catalogo.html" class="specialty-link">
+                            <span>Ver en el Catálogo</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </article>
+
+                    <article class="feature-card product-card">
+                        <div class="product-image-container">
+                            <img src="https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/7f9ebeaceea909a80306da27f0495c59.jpg"
+                                alt="Cheesecakes y mousses" class="product-img">
+                        </div>
+                        <h3>Cheesecakes y Mousses</h3>
+                        <p>Texturas cremosas y ligeras: desde nuestro Cheesecake de Fresa hasta la Torta Mousse de
+                            Maracuyá.</p>
+                        <a href="Catalogo.html" class="specialty-link">
+                            <span>Ver en el Catálogo</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </article>
+
+                    <article class="feature-card product-card">
+                        <div class="product-image-container">
+                            <img src="https://cocinerosargentinos.com/content/recipes/500x500/recipes.20239.jpg"
+                                alt="Tartas y pies de fruta" class="product-img">
+                        </div>
+                        <h3>Tartas y Pies de Fruta</h3>
+                        <p>Bases crocantes con fruta fresca de estación, como la Tarta de Frutas de Estación y el Pie de
+                            Limón Artesanal.</p>
+                        <a href="Catalogo.html" class="specialty-link">
+                            <span>Ver en el Catálogo</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </article>
+
+                    <article class="feature-card product-card">
+                        <div class="product-image-container">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf-Yeqn7GtHDYfCN8a_8uoAQvpDxKNyESpUe2mGui_1CzZ356Wb1vXggY&s=10"
+                                alt="Brownies y postres individuales" class="product-img">
+                        </div>
+                        <h3>Brownies y Postres Individuales</h3>
+                        <p>Para el antojo del día a día: porciones individuales como el Brownie con Fudge y Pecanas.</p>
+                        <a href="Catalogo.html" class="specialty-link">
+                            <span>Ver en el Catálogo</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </article>
+                </div>
+
+                <!-- Franja de Confianza: Delivery, Reservas y Origen -->
+                <div class="trust-strip">
+                    <div class="trust-item">
+                        <span class="trust-icon">🛵</span>
+                        <div>
+                            <h4>Delivery en Lima</h4>
+                            <p>Recibe tu pedido fresco directo en la puerta de tu casa.</p>
+                        </div>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎂</div>
-                        <h3>Tortas Temáticas</h3>
-                        <p>Elaboradas a la medida de tu celebración. Estilos vintage, minimalistas y buttercream art.
-                        </p>
+                    <div class="trust-item">
+                        <span class="trust-icon">📅</span>
+                        <div>
+                            <h4>Reservas para Eventos</h4>
+                            <p>Aparta tu torta o mesa dulce con anticipación para tu celebración.</p>
+                        </div>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🍓</div>
-                        <h3>Ingredientes de Primera</h3>
-                        <p>Todos los ingredientes provienen de las mejores marcas y de proveedores locales.
-                            Esto garantiza la frescura y calidad de cada producto.</p>
+                    <div class="trust-item">
+                        <span class="trust-icon">🇵🇪</span>
+                        <div>
+                            <h4>Sabor 100% Peruano</h4>
+                            <p>Recetas artesanales con identidad local e ingredientes de la mejor calidad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA hacia el Catálogo completo -->
+                <div class="section-cta">
+                    <a href="Catalogo.html" class="btn btn-primary btn-large">
+                        <span>Ver Catálogo Completo</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Nosotros -->
+        <section id="nosotros" class="preview-section" style="background: rgba(20, 14, 12, 0.4);">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">Tradición y Sabor</span>
+                    <h2 class="section-heading">Sobre SUPKEIKS</h2>
+                    <p class="section-subheading">Nacimos con el propósito de crear experiencias memorables en cada
+                        mesa, combinando pasión, dedicación y los mejores ingredientes artesanales.</p>
+                </div>
+
+                <!-- Historia + Imagen -->
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?auto=format&fit=crop&w=900&q=80"
+                            alt="Preparación artesanal de masa en SUPKEIKS">
+                    </div>
+                    <div class="about-content">
+                        <h3>Nuestra Historia</h3>
+                        <p>SUPKEIKS nació en Lima de la mano de una familia apasionada por la repostería, con la idea de
+                            llevar el sabor de los postres caseros a cada celebración especial.</p>
+                        <p>Hoy seguimos horneando cada pedido a mano, con recetas propias y los mejores ingredientes,
+                            para que cada torta cuente una historia dulce.</p>
+
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">8+</span>
+                                <span class="stat-label">Años de experiencia</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">1500+</span>
+                                <span class="stat-label">Pedidos entregados</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Artesanal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nuestros Valores -->
+                <div class="values-grid">
+                    <div class="value-card">
+                        <span class="value-icon">❤️</span>
+                        <h4>Pasión</h4>
+                        <p>Cada creación lleva dedicación y amor por el detalle.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">🌾</span>
+                        <h4>Calidad Artesanal</h4>
+                        <p>Ingredientes seleccionados y procesos hechos a mano, sin atajos.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">🤝</span>
+                        <h4>Compromiso</h4>
+                        <p>Cumplimos cada pedido a tiempo y tal como lo imaginaste.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">✨</span>
+                        <h4>Creatividad</h4>
+                        <p>Diseños únicos que se adaptan a tu celebración.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer Simple y Elegante -->
+    <!-- Footer -->
     <footer class="main-footer" id="contacto">
         <div class="footer-container">
             <div class="footer-brand">
@@ -270,7 +460,6 @@
         </div>
     </footer>
 
-    <!-- Script Principal de Comportamiento -->
     <script src="script.js"></script>
 </body>
 

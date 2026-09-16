@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo Completo | SUPKEIKS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="main-header scrolled" id="mainHeader">
+  <div class="header-container">
+    <a href="index.html" class="brand-logo">
+      <span class="logo-icon">🧁</span>
+      <span class="logo-text">SUPKEIKS</span>
+      <span class="logo-tagline">PASTELERÍA BOUTIQUE</span>
+    </a>
+
+    <!-- Menú de Navegación -->
+    <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+
+        <!-- Dropdown Catálogo -->
+        <li class="nav-item dropdown">
+          <a href="Catalogo.html" class="nav-link active dropdown-toggle">
+            Catálogo <span class="dropdown-arrow">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="Catalogo.html" class="dropdown-link active">Ver Todo el Catálogo</a></li>
+            <li><a href="Ofertas_Catalogo.html" class="dropdown-link">Ofertas Especiales</a></li>
+            <li><a href="Proximos_Agregados.html" class="dropdown-link">Próximos Lanzamientos</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a href="index.html#especialidades" class="nav-link">Especialidades</a></li>
+        <li class="nav-item"><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+        <li class="nav-item"><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="https://wa.me/51999999999?text=Hola%20SUPKEIKS!%20Deseo%20hacer%20un%20pedido%20del%20catalogo" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <span>Hacer Pedido</span>
+        <svg class="icon-whatsapp" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.076-2.029-.475-1.708-.704-2.813-2.457-2.899-2.572-.084-.116-.693-.924-.693-1.762 0-.838.438-1.25.594-1.423.156-.172.342-.216.456-.216.114 0 .228.001.328.006.105.006.246-.04.384.292.144.348.492 1.2.535 1.288.043.088.072.19.014.306-.058.116-.087.189-.173.29-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.972 1.21.669.596 1.233.781 1.408.868.174.088.276.073.379-.044.102-.116.438-.51.554-.685.116-.175.233-.146.39-.088.157.058.995.469 1.167.555.172.086.286.13.329.202.043.073.043.42-.101.825zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.396C8.423 21.499 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Contenido Catálogo General -->
+<main style="padding-top: 120px; padding-bottom: 80px;">
+  <section class="section-container">
+    <div class="section-header">
+      <span class="section-badge">Carta Principal</span>
+      <h1 class="section-heading">Catálogo de Productos</h1>
+      <p class="section-subheading">Nuestra variedad tradicional de pasteles, postres finos y cupcakes disponibles diariamente.</p>
+    </div>
+
+    <!-- Grilla dinámica alimentada desde script.js -->
+    <div class="features-grid" id="catalogProductGrid"></div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="main-footer">
+  <div class="footer-container">
+    <div class="footer-logo"><span>🧁</span> SUPKEIKS</div>
+    <p>&copy; 2026 SUPKEIKS. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

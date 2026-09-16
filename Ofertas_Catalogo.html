@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas del Catálogo | SUPKEIKS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="main-header scrolled" id="mainHeader">
+    <div class="header-container">
+        <a href="index.html" class="brand-logo">
+            <span class="logo-icon">🧁</span>
+            <span class="logo-text">SUPKEIKS</span>
+            <span class="logo-tagline">PASTELERÍA BOUTIQUE</span>
+        </a>
+
+        <!-- Menú de Navegación Completo -->
+        <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+
+                <!-- Dropdown Catálogo -->
+                <li class="nav-item dropdown">
+                    <a href="Catalogo.html" class="nav-link active dropdown-toggle">
+                        Catálogo <span class="dropdown-arrow">▾</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Catalogo.html" class="dropdown-link">Ver Todo el Catálogo</a></li>
+                        <li><a href="Ofertas_Catalogo.html" class="dropdown-link active">Ofertas Especiales</a></li>
+                        <li><a href="Proximos_Agregados.html" class="dropdown-link">Próximos Lanzamientos</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a href="index.html#especialidades" class="nav-link">Especialidades</a></li>
+                <li class="nav-item"><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                <li class="nav-item"><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button id="btnRegenerateDiscounts" class="btn btn-outline" style="font-size: 0.85rem;">
+                <span>🎲 Nuevas Ofertas</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Contenido Ofertas -->
+<main style="padding-top: 120px; padding-bottom: 80px;">
+    <section class="section-container">
+        <div class="section-header">
+            <span class="section-badge">Promociones Exclusivas</span>
+            <h1 class="section-heading">Ofertas de Temporada</h1>
+            <p class="section-subheading">Descuentos especiales aplicados automáticamente a nuestra carta tradicional por tiempo limitado.</p>
+        </div>
+
+        <!-- Grilla dinámica -->
+        <div class="features-grid" id="offersProductGrid"></div>
+    </section>
+</main>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-logo"><span>🧁</span> SUPKEIKS</div>
+        <p>&copy; 2026 SUPKEIKS. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
