@@ -141,13 +141,8 @@ Proyecto desarrollado para el curso de **Herramientas de Desarrollo** — **Univ
 
 Fragmentos modulares de código documentados y publicados para revisión académica:
 
-1. 🛒 [**Módulo de Carrito de Compras & Checkout WhatsApp**](https://gist.github.com/Jynsane/5c8e6f5ac08e92b03fabc8c421e06cfb) — *Lógica de persistencia en localStorage y formato de mensaje consolidado.*
-2. 🎠 [**Algoritmo del Carrusel Hero Slider**](https://gist.github.com/Jynsane) — *Control de autoplay sincronizado con barra de progreso CSS y eventos hover.*
-3. 🔍 [**Sistema de Filtros por Categoría y Búsqueda en Vivo**](https://gist.github.com/Jynsane) — *Filtrado de arreglos en memoria con renderizado reactivo en el DOM.*
-
----
+1. 🛒 [**Módulo de Carrito de Compras & Checkout WhatsApp en JAVASCRIPT**](https://gist.github.com/Jynsane/5c8e6f5ac08e92b03fabc8c421e06cfb) 
 
 <div align="center">
   <p>&copy; 2026 SUPKEIKS Pastelería Boutique. Proyecto Académico UTP — Todos los derechos reservados.</p>
 </div>
-
