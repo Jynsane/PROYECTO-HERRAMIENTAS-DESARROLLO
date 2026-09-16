@@ -11,14 +11,12 @@
 
 <br>
 
-<!-- ======================================================================= -->
-<!-- ESPACIO PARA DEMOSTRACIÓN EN GIF / VIDEO                               -->
-<!-- ======================================================================= -->
-### 🎬 Vista Previa del Proyecto en Funcionamiento
-<!-- Reemplaza la ruta 'assets/demo_supkeiks.gif' con la imagen o GIF de tu grabación -->
-<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80" alt="Demostración de SUPKEIKS" width="850px" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.35);" />
 
-<p><em>Coloca aquí el GIF o captura interactiva mostrando la navegación, el catálogo y el carrito de compras.</em></p>
+### 🎬 Vista Previa del Proyecto en Funcionamiento
+
+
+https://github.com/user-attachments/assets/e5589ec7-cefa-40cc-aa86-694f3e618a7e
+
 
 ---
 
