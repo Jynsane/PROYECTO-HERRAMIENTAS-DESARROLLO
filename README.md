@@ -54,3 +54,12 @@
 * **Franja de confianza:** Íconos informativos sobre delivery en Lima, reservas para eventos y el origen peruano de la pastelería.
 * **Sección Nosotros:** Historia de la marca, estadísticas (años de experiencia, pedidos entregados) y tarjetas con los valores de la pastelería.
 * **Estilos:** Nuevos componentes reutilizables (`product-card`, `about-grid`, `values-grid`) con efectos hover y ajustes responsive para móvil.
+
+
+## 📌 GitHub Gists Destacados
+1. [Módulo de Carrito de Compras & WhatsApp con JavaScript]
+https://gist.github.com/Jynsane/5c8e6f5ac08e92b03fabc8c421e06cfb
+2.
+
+3.
+
