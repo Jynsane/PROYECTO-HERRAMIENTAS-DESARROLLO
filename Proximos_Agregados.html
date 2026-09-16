@@ -1,146 +1,159 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Próximos Lanzamientos | SUPKEIKS</title>
-    <meta name="description" content="Conoce las nuevas creaciones y recetas que se sumarán a la carta exclusiva de SUPKEIKS.">
-    
+    <meta name="description"
+        content="Conoce las nuevas creaciones y recetas que se sumarán a la carta exclusiva de SUPKEIKS.">
+
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧁</text></svg>">
-    
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧁</text></svg>">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Hoja de Estilos -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<!-- Header / Barra de Navegación -->
-<header class="main-header scrolled" id="mainHeader">
-    <div class="header-container">
-        <a href="index.html" class="brand-logo" aria-label="SUPKEIKS Inicio">
-            <span class="logo-icon">🧁</span>
-            <span class="logo-text">SUPKEIKS</span>
-            <span class="logo-tagline">PASTELERÍA BOUTIQUE</span>
-        </a>
-
-        <!-- Menú unificado -->
-        <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
-            <ul class="nav-list">
-                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
-
-                <li class="nav-item dropdown">
-                    <a href="Catalogo.html" class="nav-link active dropdown-toggle">
-                        Catálogo <span class="dropdown-arrow">▾</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="Catalogo.html" class="dropdown-link">Ver Todo el Catálogo</a></li>
-                        <li><a href="Ofertas_Catalogo.html" class="dropdown-link">Ofertas Especiales</a></li>
-                        <li><a href="Proximos_Agregados.html" class="dropdown-link active">Próximos Lanzamientos</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item"><a href="index.html#especialidades" class="nav-link">Especialidades</a></li>
-                <li class="nav-item"><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
-                <li class="nav-item"><a href="Contacto.html" class="nav-link">Contacto</a></li>
-            </ul>
-
-            <!-- CTA Móvil -->
-            <div class="mobile-cta-wrapper">
-                <a href="https://wa.me/51984110884?text=Hola%20SUPKEIKS!%20Deseo%20hacer%20un%20pedido%20especial"
-                    target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">
-                    <span>Escríbenos por WhatsApp</span>
-                    <svg class="icon-whatsapp" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.076-2.029-.475-1.708-.704-2.813-2.457-2.899-2.572-.084-.116-.693-.924-.693-1.762 0-.838.438-1.25.594-1.423.156-.172.342-.216.456-.216.114 0 .228.001.328.006.105.006.246-.04.384.292.144.348.492 1.2.535 1.288.043.088.072.19.014.306-.058.116-.087.189-.173.29-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.972 1.21.669.596 1.233.781 1.408.868.174.088.276.073.379-.044.102-.116.438-.51.554-.685.116-.175.233-.146.39-.088.157.058.995.469 1.167.555.172.086.286.13.329.202.043.073.043.42-.101.825zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.396C8.423 21.499 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
-                    </svg>
-                </a>
-            </div>
-        </nav>
-
-        <div class="header-actions">
-            <button class="cart-btn" id="cartBtn" aria-label="Ver carrito de compras" title="Carrito de Compras">
-                <span class="cart-icon">🛒</span>
-                <span class="cart-badge" id="cartBadge">0</span>
-            </button>
-
-            <a href="https://wa.me/51984110884?text=Hola%20SUPKEIKS!%20Deseo%20hacer%20un%20pedido%20especial" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btnCtaDesktop">
-                <span>Hacer Pedido</span>
-                <svg class="icon-whatsapp" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.076-2.029-.475-1.708-.704-2.813-2.457-2.899-2.572-.084-.116-.693-.924-.693-1.762 0-.838.438-1.25.594-1.423.156-.172.342-.216.456-.216.114 0 .228.001.328.006.105.006.246-.04.384.292.144.348.492 1.2.535 1.288.043.088.072.19.014.306-.058.116-.087.189-.173.29-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.972 1.21.669.596 1.233.781 1.408.868.174.088.276.073.379-.044.102-.116.438-.51.554-.685.116-.175.233-.146.39-.088.157.058.995.469 1.167.555.172.086.286.13.329.202.043.073.043.42-.101.825zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.396C8.423 21.499 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
-                </svg>
+    <!-- Header / Barra de Navegación -->
+    <header class="main-header scrolled" id="mainHeader">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo" aria-label="SUPKEIKS Inicio">
+                <span class="logo-icon">🧁</span>
+                <span class="logo-text">SUPKEIKS</span>
+                <span class="logo-tagline">PASTELERÍA BOUTIQUE</span>
             </a>
 
-            <!-- Botón Hamburguesa Móvil -->
-            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú de navegación"
-                aria-expanded="false" aria-controls="navMenu">
-                <span class="bar bar-1"></span>
-                <span class="bar bar-2"></span>
-                <span class="bar bar-3"></span>
+            <!-- Menú unificado -->
+            <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a href="Catalogo.html" class="nav-link active dropdown-toggle">
+                            Catálogo <span class="dropdown-arrow">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Catalogo.html" class="dropdown-link">Ver Todo el Catálogo</a></li>
+                            <li><a href="Ofertas_Catalogo.html" class="dropdown-link">Ofertas Especiales</a></li>
+                            <li><a href="Proximos_Agregados.html" class="dropdown-link active">Próximos Lanzamientos</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a href="index.html#especialidades" class="nav-link">Especialidades</a></li>
+                    <li class="nav-item"><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                    <li class="nav-item"><a href="Contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+
+                <!-- CTA Móvil -->
+                <div class="mobile-cta-wrapper">
+                    <a href="https://wa.me/51984110884?text=Hola%20SUPKEIKS!%20Deseo%20hacer%20un%20pedido%20especial"
+                        target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">
+                        <span>Escríbenos por WhatsApp</span>
+                        <svg class="icon-whatsapp" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.076-2.029-.475-1.708-.704-2.813-2.457-2.899-2.572-.084-.116-.693-.924-.693-1.762 0-.838.438-1.25.594-1.423.156-.172.342-.216.456-.216.114 0 .228.001.328.006.105.006.246-.04.384.292.144.348.492 1.2.535 1.288.043.088.072.19.014.306-.058.116-.087.189-.173.29-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.972 1.21.669.596 1.233.781 1.408.868.174.088.276.073.379-.044.102-.116.438-.51.554-.685.116-.175.233-.146.39-.088.157.058.995.469 1.167.555.172.086.286.13.329.202.043.073.043.42-.101.825zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.396C8.423 21.499 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="header-actions">
+                <button class="cart-btn" id="cartBtn" aria-label="Ver carrito de compras" title="Carrito de Compras">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+
+                <a href="https://wa.me/51984110884?text=Hola%20SUPKEIKS!%20Deseo%20hacer%20un%20pedido%20especial"
+                    target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btnCtaDesktop">
+                    <span>Hacer Pedido</span>
+                    <svg class="icon-whatsapp" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.076-2.029-.475-1.708-.704-2.813-2.457-2.899-2.572-.084-.116-.693-.924-.693-1.762 0-.838.438-1.25.594-1.423.156-.172.342-.216.456-.216.114 0 .228.001.328.006.105.006.246-.04.384.292.144.348.492 1.2.535 1.288.043.088.072.19.014.306-.058.116-.087.189-.173.29-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.972 1.21.669.596 1.233.781 1.408.868.174.088.276.073.379-.044.102-.116.438-.51.554-.685.116-.175.233-.146.39-.088.157.058.995.469 1.167.555.172.086.286.13.329.202.043.073.043.42-.101.825zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.396C8.423 21.499 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
+                    </svg>
+                </a>
+
+                <!-- Botón Hamburguesa Móvil -->
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú de navegación"
+                    aria-expanded="false" aria-controls="navMenu">
+                    <span class="bar bar-1"></span>
+                    <span class="bar bar-2"></span>
+                    <span class="bar bar-3"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overlay móvil -->
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+
+    <!-- Contenido Próximos Lanzamientos -->
+    <main style="padding-top: 120px; padding-bottom: 80px;">
+        <section class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Próximamente</span>
+                <h1 class="section-heading">Nuevas Recetas en Creación</h1>
+                <p class="section-subheading">Nuevos sabores y recetas artesanales que se sumarán a nuestra carta muy
+                    pronto.</p>
+            </div>
+
+            <!-- Grilla de productos con el mismo diseño -->
+            <div class="features-grid" id="upcomingProductGrid"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo"><span>🧁</span> SUPKEIKS</div>
+                <p>Arte dulce y pastelería fina elaborada artesanalmente cada día.</p>
+            </div>
+            <div class="footer-info">
+                <p><strong>Horario:</strong> Lun - Sáb: 9:00 AM - 8:00 PM</p>
+                <p><strong>Pedidos & Consultas:</strong> +51 984 110 884</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SUPKEIKS. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carrito de Compras Drawer / Modal -->
+    <div class="cart-drawer-backdrop" id="cartBackdrop"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras" aria-hidden="true">
+        <div class="cart-drawer-header">
+            <h3><span>🧁</span> Tu Pedido SUPKEIKS</h3>
+            <button class="cart-close-btn" id="cartCloseBtn" aria-label="Cerrar carrito">&times;</button>
+        </div>
+        <div class="cart-drawer-body" id="cartItemsList"></div>
+        <div class="cart-drawer-footer">
+            <div class="cart-total-row">
+                <span>Total estimado:</span>
+                <span class="cart-total-price" id="cartTotalPrice">S/. 0.00</span>
+            </div>
+            <button class="btn btn-primary btn-full" id="btnCheckoutCart">
+                <span>Finalizar Pedido por WhatsApp</span>
+                <svg class="icon-whatsapp" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.076-2.029-.475-1.708-.704-2.813-2.457-2.899-2.572-.084-.116-.693-.924-.693-1.762 0-.838.438-1.25.594-1.423.156-.172.342-.216.456-.216.114 0 .228.001.328.006.105.006.246-.04.384.292.144.348.492 1.2.535 1.288.043.088.072.19.014.306-.058.116-.087.189-.173.29-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.972 1.21.669.596 1.233.781 1.408.868.174.088.276.073.379-.044.102-.116.438-.51.554-.685.116-.175.233-.146.39-.088.157.058.995.469 1.167.555.172.086.286.13.329.202.043.073.043.42-.101.825zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.396C8.423 21.499 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
+                </svg>
             </button>
         </div>
-    </div>
-</header>
+    </aside>
 
-<!-- Overlay móvil -->
-<div class="menu-backdrop" id="menuBackdrop"></div>
-
-<!-- Contenido Próximos Lanzamientos -->
-<main style="padding-top: 120px; padding-bottom: 80px;">
-    <section class="section-container">
-        <div class="section-header">
-            <span class="section-badge">Próximamente</span>
-            <h1 class="section-heading">Nuevas Recetas en Creación</h1>
-            <p class="section-subheading">Nuevos sabores y recetas artesanales que se sumarán a nuestra carta muy pronto.</p>
-        </div>
-
-        <!-- Grilla de productos con el mismo diseño -->
-        <div class="features-grid" id="upcomingProductGrid"></div>
-    </section>
-</main>
-
-<!-- Footer -->
-<footer class="main-footer">
-    <div class="footer-container">
-        <div class="footer-brand">
-            <div class="footer-logo"><span>🧁</span> SUPKEIKS</div>
-            <p>Arte dulce y pastelería fina elaborada artesanalmente cada día.</p>
-        </div>
-        <div class="footer-info">
-            <p><strong>Horario:</strong> Lun - Sáb: 9:00 AM - 8:00 PM</p>
-            <p><strong>Pedidos & Consultas:</strong> +51 984 110 884</p>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 SUPKEIKS. Todos los derechos reservados.</p>
-        </div>
-    </div>
-</footer>
-
-<!-- Carrito de Compras Drawer / Modal -->
-<div class="cart-drawer-backdrop" id="cartBackdrop"></div>
-<aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras" aria-hidden="true">
-    <div class="cart-drawer-header">
-        <h3><span>🧁</span> Tu Pedido SUPKEIKS</h3>
-        <button class="cart-close-btn" id="cartCloseBtn" aria-label="Cerrar carrito">&times;</button>
-    </div>
-    <div class="cart-drawer-body" id="cartItemsList"></div>
-    <div class="cart-drawer-footer">
-        <div class="cart-total-row">
-            <span>Total estimado:</span>
-            <span class="cart-total-price" id="cartTotalPrice">S/. 0.00</span>
-        </div>
-        <button class="btn btn-primary btn-full" id="btnCheckoutCart">
-            <span>Finalizar Pedido por WhatsApp</span>
-            <svg class="icon-whatsapp" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.076-2.029-.475-1.708-.704-2.813-2.457-2.899-2.572-.084-.116-.693-.924-.693-1.762 0-.838.438-1.25.594-1.423.156-.172.342-.216.456-.216.114 0 .228.001.328.006.105.006.246-.04.384.292.144.348.492 1.2.535 1.288.043.088.072.19.014.306-.058.116-.087.189-.173.29-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.972 1.21.669.596 1.233.781 1.408.868.174.088.276.073.379-.044.102-.116.438-.51.554-.685.116-.175.233-.146.39-.088.157.058.995.469 1.167.555.172.086.286.13.329.202.043.073.043.42-.101.825zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.396C8.423 21.499 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
-            </svg>
-        </button>
-    </div>
-</aside>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

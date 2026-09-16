@@ -8,17 +8,25 @@
    -------------------------------------------------------------------------- */
 :root {
   /* Paleta Gourmet: Crema, Miel/Oro, Rosa Pastel, Chocolate Intenso */
-  --color-primary: #D4A373;         /* Acento dorado cálido / caramelo */
-  --color-primary-hover: #E0B589;   /* Dorado iluminado */
-  --color-secondary: #E5989B;       /* Rosa pastel aterciopelado */
+  --color-primary: #D4A373;
+  /* Acento dorado cálido / caramelo */
+  --color-primary-hover: #E0B589;
+  /* Dorado iluminado */
+  --color-secondary: #E5989B;
+  /* Rosa pastel aterciopelado */
   --color-accent-terracotta: #B5838D;
-  --color-dark-bg: #140E0C;         /* Chocolate espresso profundo */
-  --color-dark-surface: #1E1513;    /* Chocolate intermedio */
+  --color-dark-bg: #140E0C;
+  /* Chocolate espresso profundo */
+  --color-dark-surface: #1E1513;
+  /* Chocolate intermedio */
   --color-dark-card: rgba(36, 23, 21, 0.85);
 
-  --color-cream-light: #FFFDF9;     /* Crema vainilla claro */
-  --color-cream-bg: #FDF8F0;        /* Vainilla suave para fondos */
-  --color-cream-muted: #EADBC8;     /* Vainilla apagada / bordes */
+  --color-cream-light: #FFFDF9;
+  /* Crema vainilla claro */
+  --color-cream-bg: #FDF8F0;
+  /* Vainilla suave para fondos */
+  --color-cream-muted: #EADBC8;
+  /* Vainilla apagada / bordes */
 
   --color-text-light: #FFFFFF;
   --color-text-muted: rgba(255, 255, 255, 0.82);
@@ -48,7 +56,9 @@
 /* --------------------------------------------------------------------------
    2. RESET & ESTILOS BASE
    -------------------------------------------------------------------------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -398,12 +408,10 @@ button {
 .slide-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-          180deg,
-          rgba(18, 12, 10, 0.72) 0%,
-          rgba(20, 14, 12, 0.42) 40%,
-          rgba(15, 9, 8, 0.85) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(18, 12, 10, 0.72) 0%,
+      rgba(20, 14, 12, 0.42) 40%,
+      rgba(15, 9, 8, 0.85) 100%);
   z-index: 1;
 }
 
@@ -627,9 +635,20 @@ button {
 }
 
 @keyframes scrollAnim {
-  0% { opacity: 1; transform: translateY(0); }
-  75% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 0; transform: translateY(0); }
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  75% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1019,6 +1038,7 @@ button {
     bottom: 24px;
   }
 }
+
 /* --- NAVEGACIÓN Y DROPDOWN --- */
 .nav-menu .nav-list {
   display: flex;
@@ -1790,8 +1810,15 @@ button {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 900px) {
@@ -1804,11 +1831,12 @@ button {
   .form-row {
     grid-template-columns: 1fr;
   }
+
   .contact-form-wrapper {
     padding: 22px;
   }
+
   .cart-drawer {
     max-width: 100%;
   }
 }
-
