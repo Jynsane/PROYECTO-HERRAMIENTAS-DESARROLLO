@@ -54,3 +54,18 @@
 * **Franja de confianza:** Íconos informativos sobre delivery en Lima, reservas para eventos y el origen peruano de la pastelería.
 * **Sección Nosotros:** Historia de la marca, estadísticas (años de experiencia, pedidos entregados) y tarjetas con los valores de la pastelería.
 * **Estilos:** Nuevos componentes reutilizables (`product-card`, `about-grid`, `values-grid`) con efectos hover y ajustes responsive para móvil.
+
+---
+
+### 5. Carrito de Compras & Checkout WhatsApp
+* **Drawer lateral interactivo:** Canasta desplegable con animación suave y cierre por overlay o teclado (Escape).
+* **Gestión de ítems:** Añadir productos desde el catálogo y las ofertas, modificar cantidades y eliminar ítems.
+* **Persistencia en cliente:** Almacenamiento local mediante `localStorage` para conservar la selección entre páginas.
+* **Pedido consolidado:** Generación automática de mensaje parametrizado con lista numerada, subtotales y precio total calculado hacia WhatsApp.
+
+---
+
+### 6. Sistema de Búsqueda y Filtros en Catálogo
+* **Filtros por categoría:** Navegación por chips dinámicos (*Todos, Tortas, Cupcakes, Cheesecakes & Mousses, Tartas & Pies, Porciones*).
+* **Búsqueda en tiempo real:** Filtrado instantáneo por nombre y descripción de ingredientes con botón de reseteo.
+
