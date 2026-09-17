@@ -143,6 +143,8 @@ Fragmentos modulares de código documentados y publicados para revisión académ
 2. 📖 [**Catalogo de productos en HTML**](https://gist.github.com/Seeth77/370a18e9e54732dcfaf08b0e815b2a20)
 3. 📚 [**Proximos agregados en el catalogo en HTML**](https://gist.github.com/Seeth77/b53caa15356503071c7dfc4e9abbf4d5)
 4. 🔍 [**Sistema de Búsqueda y Filtrado Reactivo por Categorías en JAVASCRIPT**](https://gist.github.com/Jynsane/55f05d7e697485d1ed48a0fc00edfc96)
+5. 📲 [**Generador de Enlace WhatsApp para Pedidos en JAVASCRIPT**](https://gist.github.com/Klivers/a33cbd82454ec44981e70040dff430a0)
+6. ✉️ [**Validación de Formulario de Contacto en JAVASCRIPT**](https://gist.github.com/Klivers/e1077c5e66c9c0e0dccfb9e73e4c531d)
 
 <div align="center">
   <p>&copy; 2026 SUPKEIKS Pastelería Boutique. Proyecto Académico UTP — Todos los derechos reservados.</p>
