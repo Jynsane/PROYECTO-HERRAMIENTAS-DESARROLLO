@@ -140,7 +140,7 @@ Proyecto desarrollado para el curso de **Herramientas de Desarrollo** — **Univ
 Fragmentos modulares de código documentados y publicados para revisión académica:
 
 1. 🛒 [**Módulo de Carrito de Compras & Checkout WhatsApp en JAVASCRIPT**](https://gist.github.com/Jynsane/5c8e6f5ac08e92b03fabc8c421e06cfb)
-2. 📖 [**Catalogo de productos en HTML**] (https://gist.github.com/Seeth77/370a18e9e54732dcfaf08b0e815b2a20/revisions?diff=unified&w)
+2. 📖 [**Catalogo de productos en HTML**](https://gist.github.com/Seeth77/370a18e9e54732dcfaf08b0e815b2a20/revisions?diff=unified&w)
 
 <div align="center">
   <p>&copy; 2026 SUPKEIKS Pastelería Boutique. Proyecto Académico UTP — Todos los derechos reservados.</p>
