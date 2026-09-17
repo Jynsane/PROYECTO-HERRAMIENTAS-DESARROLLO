@@ -1,4 +1,5 @@
 <div align="center">
+<<<<<<< HEAD
 
 # 🧁 SUPKEIKS — Pastelería Fina & Repostería Artesanal
 **Plataforma Web E-Commerce Boutique & Sistema de Gestión de Pedidos**
@@ -19,6 +20,26 @@
 <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80" alt="Demostración de SUPKEIKS" width="850px" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.35);" />
 
 <p><em>Coloca aquí el GIF o captura interactiva mostrando la navegación, el catálogo y el carrito de compras.</em></p>
+=======
+
+# 🧁 SUPKEIKS — Pastelería Fina & Repostería Artesanal
+**Plataforma Web E-Commerce Boutique & Sistema de Gestión de Pedidos**
+
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/es/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/es/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript_ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/es/docs/Web/JavaScript)
+[![UTP](https://img.shields.io/badge/UTP-Ciclo_8-red?style=for-the-badge)](https://www.utp.edu.pe/)
+[![Status](https://img.shields.io/badge/Avance-1.0_Completado-success?style=for-the-badge)]()
+
+<br>
+
+
+### 🎬 Vista Previa del Proyecto en Funcionamiento
+
+
+https://github.com/user-attachments/assets/e5589ec7-cefa-40cc-aa86-694f3e618a7e
+
+>>>>>>> main
 
 ---
 
@@ -132,8 +153,8 @@ Proyecto desarrollado para el curso de **Herramientas de Desarrollo** — **Univ
 | :--- | :--- | :--- |
 | **Jair Adrian Garcia Callupe** ([@Jynsane](https://github.com/Jynsane)) | Carrito de compras, filtros de catálogo, unificación responsive e integración WhatsApp | `dev-jair` |
 | **Adrian Altuna** | Sección Nosotros, historia, estadísticas y valores de marca | `dev-adrian` |
-| **Miguel Angel Nolasco Bautista** | Vistas de Catálogo base, ofertas y próximos agregados | `dev-see` |
-| **Klivers** | Estructura base de contacto y canales de atención | `dev-klivers` |
+| **See Ahn Kaarlo Polo Sanchez** | Vistas de Catálogo base, ofertas y próximos agregados | `dev-see` |
+|**Miguel Angel Nolasco Bautista** ([@Klivers](https://github.com/Klivers)) | Estructura base de contacto, canales de atención y validación de campos | `dev-klivers` |
 
 ---
 
@@ -141,11 +162,10 @@ Proyecto desarrollado para el curso de **Herramientas de Desarrollo** — **Univ
 
 Fragmentos modulares de código documentados y publicados para revisión académica:
 
-1. 🛒 [**Módulo de Carrito de Compras & Checkout WhatsApp**](https://gist.github.com/Jynsane) — *Lógica de persistencia en localStorage y formato de mensaje consolidado.*
-2. 🎠 [**Algoritmo del Carrusel Hero Slider**](https://gist.github.com/Jynsane) — *Control de autoplay sincronizado con barra de progreso CSS y eventos hover.*
-3. 🔍 [**Sistema de Filtros por Categoría y Búsqueda en Vivo**](https://gist.github.com/Jynsane) — *Filtrado de arreglos en memoria con renderizado reactivo en el DOM.*
-
----
+1. 🛒 [**Módulo de Carrito de Compras & Checkout WhatsApp en JAVASCRIPT**](https://gist.github.com/Jynsane/5c8e6f5ac08e92b03fabc8c421e06cfb)
+2. 📖 [**Catalogo de productos en HTML**](https://gist.github.com/Seeth77/370a18e9e54732dcfaf08b0e815b2a20)
+3. 📚 [**Proximos agregados en el catalogo en HTML**](https://gist.github.com/Seeth77/b53caa15356503071c7dfc4e9abbf4d5)
+4. 🔍 [**Sistema de Búsqueda y Filtrado Reactivo por Categorías en JAVASCRIPT**](https://gist.github.com/Jynsane/55f05d7e697485d1ed48a0fc00edfc96)
 
 <div align="center">
   <p>&copy; 2026 SUPKEIKS Pastelería Boutique. Proyecto Académico UTP — Todos los derechos reservados.</p>
