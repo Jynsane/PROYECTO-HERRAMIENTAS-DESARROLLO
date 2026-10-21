@@ -1,33 +1,33 @@
 /* ==========================================================================
-   SUPKEIKS - Pastelería Boutique | Hoja de Estilos Principal
-   Diseño: Moderno, Cálido, Gourmet & Elegante
+   FerreMax - Ferretería y Construcción | Hoja de Estilos Principal
+   Diseño: Industrial, confiable y contemporáneo
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. VARIABLES CSS (Custom Properties / Design Tokens)
    -------------------------------------------------------------------------- */
 :root {
-  /* Paleta Gourmet: Crema, Miel/Oro, Rosa Pastel, Chocolate Intenso */
-  --color-primary: #D4A373;         /* Acento dorado cálido / caramelo */
-  --color-primary-hover: #E0B589;   /* Dorado iluminado */
-  --color-secondary: #E5989B;       /* Rosa pastel aterciopelado */
-  --color-accent-terracotta: #B5838D;
-  --color-dark-bg: #140E0C;         /* Chocolate espresso profundo */
-  --color-dark-surface: #1E1513;    /* Chocolate intermedio */
-  --color-dark-card: rgba(36, 23, 21, 0.85);
+  /* Paleta industrial: grafito, acero y naranja de seguridad */
+  --color-primary: #F28C28;
+  --color-primary-hover: #FFAA4C;
+  --color-secondary: #E9B949;
+  --color-accent-terracotta: #C96B24;
+  --color-dark-bg: #101820;
+  --color-dark-surface: #1B2732;
+  --color-dark-card: rgba(31, 43, 54, 0.9);
 
-  --color-cream-light: #FFFDF9;     /* Crema vainilla claro */
-  --color-cream-bg: #FDF8F0;        /* Vainilla suave para fondos */
-  --color-cream-muted: #EADBC8;     /* Vainilla apagada / bordes */
+  --color-cream-light: #F4F6F7;
+  --color-cream-bg: #E8EDF0;
+  --color-cream-muted: #B9C4CC;
 
   --color-text-light: #FFFFFF;
   --color-text-muted: rgba(255, 255, 255, 0.82);
-  --color-text-dark: #2B1D19;
-  --color-text-dark-muted: #6B554F;
+  --color-text-dark: #1B252D;
+  --color-text-dark-muted: #5C6972;
 
   /* Tipografías */
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Transiciones y Sombras */
   --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -35,7 +35,7 @@
   --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.35);
-  --shadow-glow: 0 0 20px rgba(212, 163, 115, 0.4);
+  --shadow-glow: 0 0 20px rgba(242, 140, 40, 0.35);
 
   /* Dimensiones */
   --header-height: 80px;
@@ -113,10 +113,10 @@ button {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #C68B59 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #D97718 100%);
   color: var(--color-dark-bg);
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(212, 163, 115, 0.35);
+  box-shadow: 0 4px 15px rgba(242, 140, 40, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
@@ -124,7 +124,7 @@ button {
   transform: translateY(-2px);
   background: linear-gradient(135deg, var(--color-primary-hover) 0%, var(--color-primary) 100%);
   box-shadow: var(--shadow-glow);
-  color: #120907;
+  color: #101820;
 }
 
 .btn-outline {
@@ -165,16 +165,16 @@ button {
   width: 100%;
   height: var(--header-height);
   z-index: 1000;
-  background: rgba(20, 14, 12, 0.65);
+  background: rgba(16, 24, 32, 0.72);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(212, 163, 115, 0.2);
+  border-bottom: 1px solid rgba(242, 140, 40, 0.2);
   transition: all var(--transition-normal);
 }
 
 .main-header.scrolled {
-  background: rgba(18, 12, 10, 0.92);
-  border-bottom-color: rgba(212, 163, 115, 0.35);
+  background: rgba(16, 24, 32, 0.94);
+  border-bottom-color: rgba(242, 140, 40, 0.35);
   box-shadow: var(--shadow-lg);
   height: 72px;
 }
@@ -210,7 +210,7 @@ button {
   font-weight: 800;
   letter-spacing: 2px;
   color: var(--color-cream-light);
-  background: linear-gradient(135deg, #FFFDF9 20%, var(--color-primary) 100%);
+  background: linear-gradient(135deg, var(--color-cream-light) 20%, var(--color-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
@@ -400,9 +400,9 @@ button {
   inset: 0;
   background: linear-gradient(
           180deg,
-          rgba(18, 12, 10, 0.72) 0%,
-          rgba(20, 14, 12, 0.42) 40%,
-          rgba(15, 9, 8, 0.85) 100%
+          rgba(16, 24, 32, 0.78) 0%,
+          rgba(16, 24, 32, 0.48) 40%,
+          rgba(16, 24, 32, 0.88) 100%
   );
   z-index: 1;
 }
@@ -548,7 +548,7 @@ button {
   align-items: center;
   gap: 12px;
   padding: 8px 16px;
-  background: rgba(18, 12, 10, 0.45);
+  background: rgba(16, 24, 32, 0.5);
   border-radius: var(--border-radius-pill);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -637,8 +637,8 @@ button {
    -------------------------------------------------------------------------- */
 .preview-section {
   padding: 90px 24px;
-  background-color: #17100e;
-  border-top: 1px solid rgba(212, 163, 115, 0.15);
+  background-color: #15212B;
+  border-top: 1px solid rgba(242, 140, 40, 0.15);
 }
 
 .section-container {
@@ -682,8 +682,8 @@ button {
 }
 
 .feature-card {
-  background: rgba(30, 21, 19, 0.7);
-  border: 1px solid rgba(212, 163, 115, 0.18);
+  background: rgba(31, 43, 54, 0.78);
+  border: 1px solid rgba(242, 140, 40, 0.18);
   border-radius: var(--border-radius-md);
   padding: 36px 28px;
   text-align: center;
@@ -706,9 +706,9 @@ button {
 
 .feature-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(212, 163, 115, 0.45);
+  border-color: rgba(242, 140, 40, 0.45);
   box-shadow: var(--shadow-lg);
-  background: rgba(36, 25, 23, 0.95);
+  background: rgba(39, 54, 67, 0.96);
 }
 
 .feature-card:hover::before {
@@ -930,8 +930,8 @@ button {
   top: 100%;
   left: 0;
   min-width: 220px;
-  background: #19100e;
-  border: 1px solid rgba(212, 163, 115, 0.4);
+  background: #1B2732;
+  border: 1px solid rgba(242, 140, 40, 0.4);
   border-radius: 8px;
   padding: 8px 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
@@ -958,8 +958,8 @@ button {
 
 .dropdown-link:hover,
 .dropdown-link.active {
-  background: rgba(212, 163, 115, 0.2);
-  color: #d4a373;
+  background: rgba(242, 140, 40, 0.2);
+  color: #F28C28;
 }
 
 /* --- CARDS & GRID DE PRODUCTOS --- */
@@ -977,7 +977,7 @@ button {
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 16px;
-  background: #251613;
+  background: #263541;
 }
 
 .product-img {
@@ -1003,7 +1003,7 @@ button {
 .product-price {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #d4a373;
+  color: #F28C28;
 }
 
 .old-price {
@@ -1017,8 +1017,8 @@ button {
   position: absolute;
   top: 14px;
   right: 14px;
-  background: #e5989b;
-  color: #140e0c;
+  background: #E9B949;
+  color: #101820;
   font-weight: 700;
   font-size: 0.78rem;
   padding: 4px 10px;
@@ -1029,8 +1029,8 @@ button {
 .admin-card {
   max-width: 700px;
   margin: 0 auto;
-  background: rgba(30, 21, 19, 0.9);
-  border: 1px solid rgba(212, 163, 115, 0.3);
+  background: rgba(31, 43, 54, 0.92);
+  border: 1px solid rgba(242, 140, 40, 0.3);
   border-radius: 12px;
   padding: 30px;
 }
@@ -1050,18 +1050,18 @@ button {
 
 .form-group label {
   font-size: 0.88rem;
-  color: #e5d4cb;
+  color: #D0D8DE;
 }
 
 .form-group input {
   padding: 10px 14px;
   border-radius: 6px;
-  background: rgba(20, 14, 12, 0.8);
-  border: 1px solid rgba(212, 163, 115, 0.3);
+  background: rgba(16, 24, 32, 0.85);
+  border: 1px solid rgba(242, 140, 40, 0.3);
   color: #fff;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: #d4a373;
+  border-color: #F28C28;
 }
