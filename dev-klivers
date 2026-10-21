@@ -1,0 +1,13 @@
+name: CI Validacion Ferreteria - Klivers
+
+on:
+  push:
+    branches: [ "dev-klivers" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Validar archivos
+        run: echo "Archivos del módulo de contacto listos."
