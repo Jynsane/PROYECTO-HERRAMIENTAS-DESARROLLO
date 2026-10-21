@@ -45,6 +45,6 @@
 - Diseño totalmente adaptable a pantallas de escritorio y dispositivos móviles.
 
 ### Vista de Contacto (Contacto.html)
-* **Canales de atención:** Incorporación de tarjetas de horarios y teléfonos de atención.
-* **Formulario interactivo:** Captura y validación de consultas para clientes.
-* **Navegación:** Enlaces de retorno directo al Inicio y al Catálogo general.
+* Implementación de formulario de cotización.
+* Integración dinámica con la API de WhatsApp.
+* Automatización CI configurada con GitHub Actions.
