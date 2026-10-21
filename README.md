@@ -12,12 +12,6 @@
 <br>
 
 
-### 🎬 Vista Previa del Proyecto en Funcionamiento
-
-
-https://github.com/user-attachments/assets/e5589ec7-cefa-40cc-aa86-694f3e618a7e
-
-
 ---
 
 </div>
