@@ -1,41 +1,33 @@
 /* ==========================================================================
-   SUPKEIKS - Pastelería Boutique | Hoja de Estilos Principal
-   Diseño: Moderno, Cálido, Gourmet & Elegante
+   FerreMax - Ferretería y Construcción | Hoja de Estilos Principal
+   Diseño: Industrial, confiable y contemporáneo
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. VARIABLES CSS (Custom Properties / Design Tokens)
    -------------------------------------------------------------------------- */
 :root {
-  /* Paleta Gourmet: Crema, Miel/Oro, Rosa Pastel, Chocolate Intenso */
-  --color-primary: #D4A373;
-  /* Acento dorado cálido / caramelo */
-  --color-primary-hover: #E0B589;
-  /* Dorado iluminado */
-  --color-secondary: #E5989B;
-  /* Rosa pastel aterciopelado */
-  --color-accent-terracotta: #B5838D;
-  --color-dark-bg: #140E0C;
-  /* Chocolate espresso profundo */
-  --color-dark-surface: #1E1513;
-  /* Chocolate intermedio */
-  --color-dark-card: rgba(36, 23, 21, 0.85);
+  /* Paleta industrial: grafito, acero y naranja de seguridad */
+  --color-primary: #F28C28;
+  --color-primary-hover: #FFAA4C;
+  --color-secondary: #E9B949;
+  --color-accent-terracotta: #C96B24;
+  --color-dark-bg: #101820;
+  --color-dark-surface: #1B2732;
+  --color-dark-card: rgba(31, 43, 54, 0.9);
 
-  --color-cream-light: #FFFDF9;
-  /* Crema vainilla claro */
-  --color-cream-bg: #FDF8F0;
-  /* Vainilla suave para fondos */
-  --color-cream-muted: #EADBC8;
-  /* Vainilla apagada / bordes */
+  --color-cream-light: #F4F6F7;
+  --color-cream-bg: #E8EDF0;
+  --color-cream-muted: #B9C4CC;
 
   --color-text-light: #FFFFFF;
   --color-text-muted: rgba(255, 255, 255, 0.82);
-  --color-text-dark: #2B1D19;
-  --color-text-dark-muted: #6B554F;
+  --color-text-dark: #1B252D;
+  --color-text-dark-muted: #5C6972;
 
   /* Tipografías */
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Transiciones y Sombras */
   --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -43,7 +35,7 @@
   --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.35);
-  --shadow-glow: 0 0 20px rgba(212, 163, 115, 0.4);
+  --shadow-glow: 0 0 20px rgba(242, 140, 40, 0.35);
 
   /* Dimensiones */
   --header-height: 80px;
@@ -126,7 +118,7 @@ button {
   background: linear-gradient(135deg, var(--color-primary) 0%, #C68B59 100%);
   color: var(--color-dark-bg);
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(212, 163, 115, 0.35);
+  box-shadow: 0 4px 15px rgba(242, 140, 40, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
@@ -175,16 +167,16 @@ button {
   width: 100%;
   height: var(--header-height);
   z-index: 1000;
-  background: rgba(20, 14, 12, 0.65);
+  background: rgba(16, 24, 32, 0.65);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(212, 163, 115, 0.2);
+  border-bottom: 1px solid rgba(242, 140, 40, 0.2);
   transition: all var(--transition-normal);
 }
 
 .main-header.scrolled {
-  background: rgba(18, 12, 10, 0.92);
-  border-bottom-color: rgba(212, 163, 115, 0.35);
+  background: rgba(16, 24, 32, 0.92);
+  border-bottom-color: rgba(242, 140, 40, 0.35);
   box-shadow: var(--shadow-lg);
   height: 72px;
 }
@@ -220,7 +212,7 @@ button {
   font-weight: 800;
   letter-spacing: 2px;
   color: var(--color-cream-light);
-  background: linear-gradient(135deg, #FFFDF9 20%, var(--color-primary) 100%);
+  background: linear-gradient(135deg, #F4F6F7 20%, var(--color-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
@@ -409,8 +401,8 @@ button {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg,
-      rgba(18, 12, 10, 0.72) 0%,
-      rgba(20, 14, 12, 0.42) 40%,
+      rgba(16, 24, 32, 0.72) 0%,
+      rgba(16, 24, 32, 0.42) 40%,
       rgba(15, 9, 8, 0.85) 100%);
   z-index: 1;
 }
@@ -439,9 +431,9 @@ button {
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  background: rgba(212, 163, 115, 0.2);
+  background: rgba(242, 140, 40, 0.2);
   color: var(--color-cream-muted);
-  border: 1px solid rgba(212, 163, 115, 0.4);
+  border: 1px solid rgba(242, 140, 40, 0.4);
   backdrop-filter: blur(6px);
   margin-bottom: 18px;
   opacity: 0;
@@ -526,7 +518,7 @@ button {
 }
 
 .slider-arrow:hover {
-  background: rgba(212, 163, 115, 0.9);
+  background: rgba(242, 140, 40, 0.9);
   color: var(--color-dark-bg);
   border-color: var(--color-primary);
   transform: translateY(-50%) scale(1.08);
@@ -556,7 +548,7 @@ button {
   align-items: center;
   gap: 12px;
   padding: 8px 16px;
-  background: rgba(18, 12, 10, 0.45);
+  background: rgba(16, 24, 32, 0.45);
   border-radius: var(--border-radius-pill);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -587,7 +579,7 @@ button {
   width: 32px;
   border-radius: 10px;
   background-color: var(--color-primary);
-  box-shadow: 0 0 10px rgba(212, 163, 115, 0.7);
+  box-shadow: 0 0 10px rgba(242, 140, 40, 0.7);
 }
 
 /* Indicador de scroll (hint) */
@@ -657,7 +649,7 @@ button {
 .preview-section {
   padding: 90px 24px;
   background-color: #17100e;
-  border-top: 1px solid rgba(212, 163, 115, 0.15);
+  border-top: 1px solid rgba(242, 140, 40, 0.15);
 }
 
 .section-container {
@@ -701,8 +693,8 @@ button {
 }
 
 .feature-card {
-  background: rgba(30, 21, 19, 0.7);
-  border: 1px solid rgba(212, 163, 115, 0.18);
+  background: rgba(31, 43, 54, 0.7);
+  border: 1px solid rgba(242, 140, 40, 0.18);
   border-radius: var(--border-radius-md);
   padding: 36px 28px;
   text-align: center;
@@ -725,7 +717,7 @@ button {
 
 .feature-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(212, 163, 115, 0.45);
+  border-color: rgba(242, 140, 40, 0.45);
   box-shadow: var(--shadow-lg);
   background: rgba(36, 25, 23, 0.95);
 }
@@ -801,7 +793,7 @@ button {
   gap: 32px;
   margin-top: 24px;
   padding-top: 24px;
-  border-top: 1px solid rgba(212, 163, 115, 0.2);
+  border-top: 1px solid rgba(242, 140, 40, 0.2);
 }
 
 .stat-item {
@@ -831,8 +823,8 @@ button {
 }
 
 .value-card {
-  background: rgba(30, 21, 19, 0.7);
-  border: 1px solid rgba(212, 163, 115, 0.18);
+  background: rgba(31, 43, 54, 0.7);
+  border: 1px solid rgba(242, 140, 40, 0.18);
   border-radius: var(--border-radius-md);
   padding: 28px 22px;
   text-align: center;
@@ -841,7 +833,7 @@ button {
 
 .value-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(212, 163, 115, 0.45);
+  border-color: rgba(242, 140, 40, 0.45);
   box-shadow: var(--shadow-lg);
 }
 
@@ -964,7 +956,7 @@ button {
     padding: 100px 30px 40px;
     transition: right var(--transition-normal);
     z-index: 999;
-    border-left: 1px solid rgba(212, 163, 115, 0.25);
+    border-left: 1px solid rgba(242, 140, 40, 0.25);
   }
 
   .nav-menu.is-open {
@@ -1073,7 +1065,7 @@ button {
   left: 0;
   min-width: 220px;
   background: #19100e;
-  border: 1px solid rgba(212, 163, 115, 0.4);
+  border: 1px solid rgba(242, 140, 40, 0.4);
   border-radius: 8px;
   padding: 8px 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
@@ -1100,8 +1092,8 @@ button {
 
 .dropdown-link:hover,
 .dropdown-link.active {
-  background: rgba(212, 163, 115, 0.2);
-  color: #d4a373;
+  background: rgba(242, 140, 40, 0.2);
+  color: #F28C28;
 }
 
 /* --- CARDS & GRID DE PRODUCTOS --- */
@@ -1145,7 +1137,7 @@ button {
 .product-price {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #d4a373;
+  color: #F28C28;
 }
 
 .old-price {
@@ -1159,8 +1151,8 @@ button {
   position: absolute;
   top: 14px;
   right: 14px;
-  background: #e5989b;
-  color: #140e0c;
+  background: #E9B949;
+  color: #101820;
   font-weight: 700;
   font-size: 0.78rem;
   padding: 4px 10px;
@@ -1198,7 +1190,7 @@ button {
   gap: 32px;
   margin-top: 48px;
   padding-top: 44px;
-  border-top: 1px solid rgba(212, 163, 115, 0.15);
+  border-top: 1px solid rgba(242, 140, 40, 0.15);
 }
 
 .trust-item {
@@ -1216,8 +1208,8 @@ button {
   height: 52px;
   font-size: 1.5rem;
   border-radius: 50%;
-  background: rgba(212, 163, 115, 0.12);
-  border: 1px solid rgba(212, 163, 115, 0.3);
+  background: rgba(242, 140, 40, 0.12);
+  border: 1px solid rgba(242, 140, 40, 0.3);
 }
 
 .trust-item h4 {
@@ -1241,8 +1233,8 @@ button {
 .admin-card {
   max-width: 700px;
   margin: 0 auto;
-  background: rgba(30, 21, 19, 0.9);
-  border: 1px solid rgba(212, 163, 115, 0.3);
+  background: rgba(31, 43, 54, 0.9);
+  border: 1px solid rgba(242, 140, 40, 0.3);
   border-radius: 12px;
   padding: 30px;
 }
@@ -1268,14 +1260,14 @@ button {
 .form-group input {
   padding: 10px 14px;
   border-radius: 6px;
-  background: rgba(20, 14, 12, 0.8);
-  border: 1px solid rgba(212, 163, 115, 0.3);
+  background: rgba(16, 24, 32, 0.8);
+  border: 1px solid rgba(242, 140, 40, 0.3);
   color: #fff;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: #d4a373;
+  border-color: #F28C28;
 }
 
 /* ==========================================================================
@@ -1291,8 +1283,8 @@ button {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(212, 163, 115, 0.15);
-  border: 1px solid rgba(212, 163, 115, 0.4);
+  background: rgba(242, 140, 40, 0.15);
+  border: 1px solid rgba(242, 140, 40, 0.4);
   color: var(--color-cream-light);
   font-size: 1.25rem;
   transition: all var(--transition-fast);
@@ -1300,9 +1292,9 @@ button {
 }
 
 .cart-btn:hover {
-  background: rgba(212, 163, 115, 0.3);
+  background: rgba(242, 140, 40, 0.3);
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(212, 163, 115, 0.35);
+  box-shadow: 0 4px 14px rgba(242, 140, 40, 0.35);
 }
 
 .cart-badge {
@@ -1313,15 +1305,15 @@ button {
   height: 20px;
   padding: 0 5px;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--color-primary), #B5838D);
-  color: #140E0C;
+  background: linear-gradient(135deg, var(--color-primary), #C96B24);
+  color: #101820;
   font-size: 0.72rem;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  border: 1px solid #FFFDF9;
+  border: 1px solid #F4F6F7;
 }
 
 /* --- 2. Drawer / Modal de Carrito --- */
@@ -1349,7 +1341,7 @@ button {
   width: 100%;
   max-width: 420px;
   background: #1A1210;
-  border-left: 1px solid rgba(212, 163, 115, 0.35);
+  border-left: 1px solid rgba(242, 140, 40, 0.35);
   box-shadow: -10px 0 35px rgba(0, 0, 0, 0.6);
   z-index: 1250;
   display: flex;
@@ -1367,8 +1359,8 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 22px 24px;
-  border-bottom: 1px solid rgba(212, 163, 115, 0.2);
-  background: rgba(20, 14, 12, 0.6);
+  border-bottom: 1px solid rgba(242, 140, 40, 0.2);
+  background: rgba(16, 24, 32, 0.6);
 }
 
 .cart-drawer-header h3 {
@@ -1406,7 +1398,7 @@ button {
 }
 
 .cart-drawer-body::-webkit-scrollbar-thumb {
-  background: rgba(212, 163, 115, 0.3);
+  background: rgba(242, 140, 40, 0.3);
   border-radius: 4px;
 }
 
@@ -1427,8 +1419,8 @@ button {
   align-items: center;
   gap: 14px;
   padding: 12px;
-  background: rgba(30, 21, 19, 0.85);
-  border: 1px solid rgba(212, 163, 115, 0.18);
+  background: rgba(31, 43, 54, 0.85);
+  border: 1px solid rgba(242, 140, 40, 0.18);
   border-radius: var(--border-radius-md);
   transition: transform var(--transition-fast);
 }
@@ -1439,7 +1431,7 @@ button {
   border-radius: var(--border-radius-sm);
   object-fit: cover;
   flex-shrink: 0;
-  border: 1px solid rgba(212, 163, 115, 0.25);
+  border: 1px solid rgba(242, 140, 40, 0.25);
 }
 
 .cart-item-info {
@@ -1474,8 +1466,8 @@ button {
   width: 26px;
   height: 26px;
   border-radius: 4px;
-  background: rgba(212, 163, 115, 0.15);
-  border: 1px solid rgba(212, 163, 115, 0.35);
+  background: rgba(242, 140, 40, 0.15);
+  border: 1px solid rgba(242, 140, 40, 0.35);
   color: var(--color-cream-light);
   display: flex;
   align-items: center;
@@ -1499,7 +1491,7 @@ button {
 }
 
 .cart-remove-btn {
-  color: #B5838D;
+  color: #C96B24;
   font-size: 0.95rem;
   padding: 6px;
   margin-left: 4px;
@@ -1507,14 +1499,14 @@ button {
 }
 
 .cart-remove-btn:hover {
-  color: #E5989B;
+  color: #E9B949;
   transform: scale(1.1);
 }
 
 .cart-drawer-footer {
   padding: 20px 24px;
-  border-top: 1px solid rgba(212, 163, 115, 0.2);
-  background: rgba(20, 14, 12, 0.8);
+  border-top: 1px solid rgba(242, 140, 40, 0.2);
+  background: rgba(16, 24, 32, 0.8);
 }
 
 .cart-total-row {
@@ -1553,8 +1545,8 @@ button {
   width: 100%;
   padding: 13px 44px 13px 44px;
   border-radius: var(--border-radius-pill);
-  background: rgba(30, 21, 19, 0.85);
-  border: 1px solid rgba(212, 163, 115, 0.35);
+  background: rgba(31, 43, 54, 0.85);
+  border: 1px solid rgba(242, 140, 40, 0.35);
   color: var(--color-cream-light);
   font-size: 0.95rem;
   outline: none;
@@ -1563,7 +1555,7 @@ button {
 
 .search-box input:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 16px rgba(212, 163, 115, 0.25);
+  box-shadow: 0 0 16px rgba(242, 140, 40, 0.25);
   background: rgba(36, 25, 23, 0.95);
 }
 
@@ -1597,8 +1589,8 @@ button {
 .filter-chip {
   padding: 8px 18px;
   border-radius: var(--border-radius-pill);
-  background: rgba(30, 21, 19, 0.7);
-  border: 1px solid rgba(212, 163, 115, 0.25);
+  background: rgba(31, 43, 54, 0.7);
+  border: 1px solid rgba(242, 140, 40, 0.25);
   color: var(--color-cream-muted);
   font-size: 0.86rem;
   font-weight: 500;
@@ -1607,17 +1599,17 @@ button {
 }
 
 .filter-chip:hover {
-  background: rgba(212, 163, 115, 0.2);
+  background: rgba(242, 140, 40, 0.2);
   color: var(--color-cream-light);
-  border-color: rgba(212, 163, 115, 0.45);
+  border-color: rgba(242, 140, 40, 0.45);
 }
 
 .filter-chip.active {
   background: linear-gradient(135deg, var(--color-primary), #C68B59);
-  color: #140E0C;
+  color: #101820;
   font-weight: 600;
   border-color: transparent;
-  box-shadow: 0 3px 12px rgba(212, 163, 115, 0.35);
+  box-shadow: 0 3px 12px rgba(242, 140, 40, 0.35);
 }
 
 /* --- 4. Botones duales en Tarjeta de Producto --- */
@@ -1640,8 +1632,8 @@ button {
   padding: 6px 12px;
   font-size: 0.82rem;
   border-radius: var(--border-radius-pill);
-  background: rgba(212, 163, 115, 0.18);
-  border: 1px solid rgba(212, 163, 115, 0.4);
+  background: rgba(242, 140, 40, 0.18);
+  border: 1px solid rgba(242, 140, 40, 0.4);
   color: var(--color-cream-light);
   font-weight: 600;
   transition: all var(--transition-fast);
@@ -1649,8 +1641,8 @@ button {
 
 .btn-add-cart:hover {
   background: var(--color-primary);
-  color: #140E0C;
-  box-shadow: 0 2px 8px rgba(212, 163, 115, 0.35);
+  color: #101820;
+  box-shadow: 0 2px 8px rgba(242, 140, 40, 0.35);
 }
 
 /* --- 5. Página de Contacto Boutique --- */
@@ -1674,8 +1666,8 @@ button {
   align-items: flex-start;
   gap: 16px;
   padding: 20px;
-  background: rgba(30, 21, 19, 0.85);
-  border: 1px solid rgba(212, 163, 115, 0.25);
+  background: rgba(31, 43, 54, 0.85);
+  border: 1px solid rgba(242, 140, 40, 0.25);
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition-fast), border-color var(--transition-fast);
@@ -1683,12 +1675,12 @@ button {
 
 .contact-info-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(212, 163, 115, 0.5);
+  border-color: rgba(242, 140, 40, 0.5);
 }
 
 .contact-icon-wrapper {
   font-size: 1.8rem;
-  background: rgba(212, 163, 115, 0.12);
+  background: rgba(242, 140, 40, 0.12);
   width: 48px;
   height: 48px;
   border-radius: 12px;
@@ -1696,7 +1688,7 @@ button {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border: 1px solid rgba(212, 163, 115, 0.2);
+  border: 1px solid rgba(242, 140, 40, 0.2);
 }
 
 .contact-info-card h3 {
@@ -1725,8 +1717,8 @@ button {
 }
 
 .contact-form-wrapper {
-  background: rgba(30, 21, 19, 0.9);
-  border: 1px solid rgba(212, 163, 115, 0.35);
+  background: rgba(31, 43, 54, 0.9);
+  border: 1px solid rgba(242, 140, 40, 0.35);
   border-radius: var(--border-radius-lg);
   padding: 34px;
   box-shadow: var(--shadow-lg);
@@ -1772,9 +1764,9 @@ button {
   width: 100%;
   padding: 12px 16px;
   border-radius: 8px;
-  background: rgba(20, 14, 12, 0.85);
-  border: 1px solid rgba(212, 163, 115, 0.3);
-  color: #FFFDF9;
+  background: rgba(16, 24, 32, 0.85);
+  border: 1px solid rgba(242, 140, 40, 0.3);
+  color: #F4F6F7;
   font-family: var(--font-sans);
   font-size: 0.92rem;
   outline: none;
@@ -1785,7 +1777,7 @@ button {
 .styled-contact-form textarea:focus,
 .styled-select:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 12px rgba(212, 163, 115, 0.25);
+  box-shadow: 0 0 12px rgba(242, 140, 40, 0.25);
 }
 
 .styled-select {
@@ -1793,8 +1785,8 @@ button {
 }
 
 .styled-select option {
-  background: #1E1513;
-  color: #FFFDF9;
+  background: #1B2732;
+  color: #F4F6F7;
 }
 
 .form-alert-success {
