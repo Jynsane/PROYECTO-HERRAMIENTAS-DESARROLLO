@@ -1,5 +1,5 @@
 /**
- * SUPKEIKS - Pastelería Boutique & Repostería Fina
+ * FerreMax - Ferretería y Construcción
  * Script Principal: Carrusel, Navegación Móvil, Catálogo con Filtros, Carrito de Compras y Contacto
  * Vanilla JavaScript (Sin dependencias externas)
  */
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. CONFIGURACIÓN GLOBAL Y TELÉFONO DE ATENCIÓN
   // ==========================================================================
   const WHATSAPP_PHONE = '51984110884';
-  const fallbackImg = 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80';
+  const fallbackImg = 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80';
 
   // ==========================================================================
   // 2. NAVEGACIÓN MÓVIL Y HEADER STICKY
@@ -173,174 +173,174 @@ document.addEventListener('DOMContentLoaded', () => {
   const defaultCatalog = [
     {
       id: 1,
-      name: "Torta de Chocolate & Frutas Frescas",
-      category: "tortas",
-      price: 45.00,
-      desc: "Bizcocho húmedo de chocolate al 70%, relleno de fudge artesanal y coronado con fresas y arándanos frescos.",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsldGvLLzi6-UunPavJsr1TSlk1dJNXZ2jXr5cWkpoeWRUAphWoixQzVA&s=10"
+      name: "Clavos de acero 2 pulgadas (1 kg)",
+      category: "construccion",
+      price: 12.90,
+      desc: "Clavos resistentes para trabajos de carpintería, reparaciones y construcción.",
+      img: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 2,
-      name: "Torta Clásica de Manjar Blanco",
-      category: "tortas",
-      price: 65.00,
-      desc: "Esponjoso bizcochuelo de vainilla bañado en almíbar, con generosas capas de manjar blanco de olla tradicional.",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2PnaVRDyi5g0pVp0Lly2yWxzvOwEOEPohEdPfDygopVyJnVSj6VXLie0&s=10"
+      name: "Martillo de uña 16 oz",
+      category: "herramientas",
+      price: 28.50,
+      desc: "Martillo con mango ergonómico, ideal para clavar y retirar clavos.",
+      img: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 3,
-      name: "Cheesecake Horneado de Fresa",
-      category: "cheesecakes",
-      price: 45.00,
-      desc: "Base crocante de galletas de mantequilla, crema de queso suave horneada y coulis natural de fresas silvestres.",
-      img: "https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/7f9ebeaceea909a80306da27f0495c59.jpg"
+      name: "Juego de destornilladores (6 piezas)",
+      category: "herramientas",
+      price: 35.00,
+      desc: "Set con puntas planas y Phillips para tareas de instalación y mantenimiento.",
+      img: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 4,
-      name: "Torta Tres Leches Tradicional",
-      category: "tortas",
-      price: 50.00,
-      desc: "Bizcocho súper húmedo infusionado en nuestra mezcla secreta de tres leches y canela, con merengue suizo flameado.",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJi2FjNiekEyNyDn_JvSCY0GBciybCspPMBFqIdEA-OHqq9CklTrJjnv5D&s=10"
+      name: "Taladro percutor 650 W",
+      category: "herramientas",
+      price: 189.90,
+      desc: "Taladro con función percutora para perforar madera, metal y mampostería.",
+      img: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 5,
-      name: "Torta de Zanahoria, Nueces & Canela",
-      category: "tortas",
-      price: 40.00,
-      desc: "Textura tierna y especiada con zanahorias ralladas, nueces crocantes y suave cobertura de frosting de queso crema.",
-      img: "https://peopleenespanol.com/thmb/yy2sl47SGlJH0dIZGZqADJ3FggQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/pastel-de-zanahoria-con-nuez-2000-41c58bf044c0418d8694ffb720d29e85.jpg"
+      name: "Tornillos para madera 2 pulgadas (100 unidades)",
+      category: "construccion",
+      price: 16.90,
+      desc: "Tornillos galvanizados con punta fina para fijaciones firmes en madera.",
+      img: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 6,
-      name: "Pie de Limón Artesanal",
-      category: "tartas",
-      price: 50.00,
-      desc: "Masa quebrada crujiente con crema cítrica de limones peruanos seleccionados y copete de merengue dorado.",
-      img: "https://www.recetasnestle.com.pe/sites/default/files/srh_recipes/048eaabd06e27a57624b5ed079537b08.jpg"
+      name: "Cinta métrica profesional 5 m",
+      category: "herramientas",
+      price: 19.90,
+      desc: "Cinta retráctil con seguro y gancho metálico para mediciones precisas.",
+      img: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 7,
-      name: "Cupcakes de Vainilla Francesa (x6)",
-      category: "cupcakes",
-      price: 42.00,
-      desc: "Masa esponjosa con extracto de vainilla pura de Madagascar, frosting sedoso de buttercream y perlas dulces.",
-      img: "https://www.clarin.com/2021/04/29/9lAb2baoa_1200x0__1.jpg"
+      name: "Pintura látex blanca (1 galón)",
+      category: "pintura",
+      price: 59.90,
+      desc: "Pintura para interiores de buen rendimiento y acabado uniforme.",
+      img: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 8,
-      name: "Cupcakes de Choco-Avellana (x6)",
-      category: "cupcakes",
-      price: 55.00,
-      desc: "Bizcocho intenso de chocolate belga relleno de crema de avellanas y coronado con rosetón de chocolate.",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs8eAG0-q6jIK9aTfb2Robeq0ATqIIgd7rdvEi0kawgZXk9dABl791AZM&s=10"
+      name: "Guantes de seguridad reforzados",
+      category: "seguridad",
+      price: 18.00,
+      desc: "Guantes resistentes para proteger las manos durante trabajos de mantenimiento.",
+      img: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 9,
-      name: "Torta Selva Negra Gourmet",
-      category: "tortas",
-      price: 48.00,
-      desc: "Capas de bizcocho de cacao fino, crema chantilly fresca, cerezas maceradas en licor y virutas de chocolate amargo.",
-      img: "https://www.infobae.com/resizer/v2/WYA2IKFGGJH3VJNMLKDHP57EKI.jpg?auth=d4158258757a240a168e3dd66a230ff2faf0316f2e9f2a13cbc0c18afdba1ba0&smart=true&width=1200&height=900&quality=85"
+      name: "Llave inglesa ajustable 10 pulgadas",
+      category: "plomeria",
+      price: 32.90,
+      desc: "Llave ajustable para apretar y aflojar tuercas y conexiones de plomería.",
+      img: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 10,
-      name: "Tarta de Frutas de Estación",
-      category: "tartas",
-      price: 35.00,
-      desc: "Crocante masa sablée rellena de suave crema pastelera perfumada con vainilla y abundante fruta fresca glaseada.",
-      img: "https://cocinerosargentinos.com/content/recipes/500x500/recipes.20239.jpg"
+      name: "Cable eléctrico calibre 12 (por metro)",
+      category: "electricidad",
+      price: 4.50,
+      desc: "Cable de cobre para instalaciones eléctricas, disponible por metro.",
+      img: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 11,
-      name: "Torta Mousse de Maracuyá",
-      category: "cheesecakes",
-      price: 60.00,
-      desc: "Textura aireada y refrescante con reducción natural de maracuyá sobre fina base húmeda de bizcochuelo.",
-      img: "https://cheesecakeoriginal.com/wp-content/uploads/2025/01/Mousse-Maracuya-mediano-delivery.webp"
+      name: "Cemento de uso general (bolsa 42.5 kg)",
+      category: "construccion",
+      price: 29.90,
+      desc: "Cemento para preparar concreto, mortero y realizar trabajos de albañilería.",
+      img: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 12,
-      name: "Brownie con Fudge & Pecanas",
-      category: "individuales",
-      price: 25.00,
-      desc: "Porción generosa de brownie chocolatoso de centro melcochudo, bañado con fudge de olla caliente y pecanas tostadas.",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf-Yeqn7GtHDYfCN8a_8uoAQvpDxKNyESpUe2mGui_1CzZ356Wb1vXggY&s=10"
+      name: "Cinta aislante negra",
+      category: "electricidad",
+      price: 4.90,
+      desc: "Cinta aislante flexible para trabajos eléctricos y reparaciones generales.",
+      img: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80"
     }
   ];
 
   const defaultUpcoming = [
     {
       id: 101,
-      name: "Línea Macarons Parisinos (Caja x12)",
-      price: 55.00,
-      desc: "Delicadas galletas francesas rellenas de ganache de pistacho siciliano, maracuyá y salted caramel.",
-      badge: "Lanzamiento: Próxima Semana",
-      img: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=600&q=80"
+      name: "Sierra circular 7 1/4 pulgadas",
+      price: 249.90,
+      desc: "Herramienta eléctrica para cortes rectos y precisos en madera y tableros.",
+      badge: "Próximamente",
+      img: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 102,
-      name: "Torta Keto & Gluten Free",
-      price: 75.00,
-      desc: "Bizcocho húmedo a base de harina de almendras, cacao al 80% y endulzado naturalmente con monk fruit.",
-      badge: "Línea Saludable",
-      img: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80"
+      name: "Amoladora angular 4 1/2 pulgadas",
+      price: 179.90,
+      desc: "Equipo compacto para cortar, desbastar y pulir distintos materiales.",
+      badge: "Próximamente",
+      img: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 103,
-      name: "Tartaleta Royale de Pistacho",
-      price: 50.00,
-      desc: "Masa sableé crocante con crema diplomata de pistacho puro y frambuesas frescas glaseadas.",
-      badge: "Edición Especial",
-      img: "https://images.unsplash.com/photo-1557308536-ee471ef2c390?auto=format&fit=crop&w=600&q=80"
+      name: "Caja de herramientas metálica",
+      price: 89.90,
+      desc: "Caja resistente con bandeja organizadora para guardar y transportar herramientas.",
+      badge: "Nuevo",
+      img: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 104,
-      name: "Éclairs Franceses Gourmet (Pack x4)",
-      price: 38.00,
-      desc: "Masa choux tradicional rellena de crema pastelera de vainilla de Madagascar y glaseado de chocolate belga.",
-      badge: "En Pruebas",
-      img: "https://images.unsplash.com/photo-1612203985729-70726954388c?auto=format&fit=crop&w=600&q=80"
+      name: "Nivel de aluminio 24 pulgadas",
+      price: 39.90,
+      desc: "Nivel con burbujas de precisión para comprobar superficies y alineaciones.",
+      badge: "Nuevo",
+      img: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 105,
-      name: "Torta Lotus Biscoff & Caramelo",
-      price: 85.00,
-      desc: "Capas de bizcocho especiado con relleno cremoso y cobertura de galleta Lotus Biscoff crujiente.",
-      badge: "Próximo Mes",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz1uNFehRZDr-BcSLbwrEeV9yaS361ahYDC-Jl2PKX3DPC4uVgohoW8C2M&s=10"
+      name: "Llave de tubo para plomería",
+      price: 54.90,
+      desc: "Herramienta de agarre firme para ajustar y aflojar conexiones de tubería.",
+      badge: "Próximamente",
+      img: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 106,
-      name: "Pavlova de Frutas del Bosque",
-      price: 60.00,
-      desc: "Nube crocante de merengue horneado, crema chantilly fresca y reducción artesanal de frutos rojos.",
-      badge: "Receta Nueva",
-      img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=600&q=80"
+      name: "Reflector LED para exterior 50 W",
+      price: 49.90,
+      desc: "Iluminación de bajo consumo para patios, talleres y zonas de trabajo.",
+      badge: "Nuevo",
+      img: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 107,
-      name: "Croissants Rellenos de Nutella (Pack x3)",
-      price: 32.00,
-      desc: "Hojaldre 100% mantequilla francesa con doble fermentación, relleno abundante de avellanas y cacao.",
-      badge: "Desayunos & Brunch",
-      img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80"
+      name: "Manguera reforzada para jardín (15 m)",
+      price: 69.90,
+      desc: "Manguera flexible y resistente para riego y limpieza de exteriores.",
+      badge: "Próximamente",
+      img: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 108,
-      name: "Torta Mousse de Baileys & Café",
-      price: 78.00,
-      desc: "Textura ligera y aireada con infusión de crema de licor irlandés sobre fina base de brownie.",
-      badge: "Solo Adultos (+18)",
-      img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80"
+      name: "Set de llaves combinadas (8 piezas)",
+      price: 74.90,
+      desc: "Juego de llaves métricas para trabajos de ajuste, montaje y reparación.",
+      badge: "Próximamente",
+      img: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=80"
     }
   ];
 
   // Persistencia y actualización inteligente del catálogo
   function getCatalogProducts() {
-    const raw = localStorage.getItem("supkeiks_catalog_v2");
+    const raw = localStorage.getItem("ferremax_catalog_v1");
     if (!raw) {
-      localStorage.setItem("supkeiks_catalog_v2", JSON.stringify(defaultCatalog));
+      localStorage.setItem("ferremax_catalog_v1", JSON.stringify(defaultCatalog));
       return defaultCatalog;
     }
     try {
@@ -364,7 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function getCart() {
     try {
-      const raw = localStorage.getItem("supkeiks_cart");
+      const raw = localStorage.getItem("ferremax_cart");
       return raw ? JSON.parse(raw) : [];
     } catch {
       return [];
@@ -372,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function saveCart(cart) {
-    localStorage.setItem("supkeiks_cart", JSON.stringify(cart));
+    localStorage.setItem("ferremax_cart", JSON.stringify(cart));
     renderCartUI();
   }
 
@@ -451,9 +451,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cart.length === 0) {
       cartItemsList.innerHTML = `
         <div class="cart-empty-state">
-          <span>🧁</span>
+          <span>🔧</span>
           <h4>Tu carrito está vacío</h4>
-          <p>Explora nuestro catálogo y agrega tus dulces favoritos.</p>
+          <p>Explora el catálogo y agrega herramientas y materiales.</p>
         </div>
       `;
       return;
@@ -507,7 +507,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      let message = "🧁 *¡Hola SUPKEIKS! Deseo realizar el siguiente pedido:*%0A%0A";
+      let message = "🔧 *¡Hola FerreMax! Quiero consultar por estos productos:*%0A%0A";
       let total = 0;
 
       cart.forEach((item, index) => {
@@ -518,7 +518,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       message += `%0A--------------------------------%0A`;
       message += `*Total estimado:* S/. ${total.toFixed(2)}%0A%0A`;
-      message += "¿Me confirman la disponibilidad y el tiempo de entrega/delivery por favor?";
+      message += "¿Me confirman la disponibilidad y el tiempo de entrega, por favor?";
 
       const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${message}`;
       window.open(waUrl, "_blank");
@@ -575,7 +575,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="product-price">S/. ${parseFloat(prod.price).toFixed(2)}</span>
           <div class="product-action-btns">
             <button class="btn-add-cart" data-id="${prod.id}" title="Añadir a la canasta">🛒 Agregar</button>
-            <a href="https://wa.me/${WHATSAPP_PHONE}?text=Hola%20SUPKEIKS!%20Deseo%20comprar:%20${encodeURIComponent(prod.name)}"
+            <a href="https://wa.me/${WHATSAPP_PHONE}?text=Hola%20FerreMax!%20Quiero%20consultar%20por:%20${encodeURIComponent(prod.name)}"
               target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding:6px 14px; font-size:0.85rem;">
               Pedir Directo
             </a>
@@ -664,7 +664,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 data-price="${discountedPrice.toFixed(2)}"
                 data-img="${prod.img}"
                 title="Añadir oferta a la canasta">🛒 Agregar</button>
-              <a href="https://wa.me/${WHATSAPP_PHONE}?text=Hola%20SUPKEIKS!%20Deseo%20la%20oferta%20de%20${encodeURIComponent(prod.name)}%20con%20descuento%20de%20${discountPercent}%25%20(S/.%20${discountedPrice.toFixed(2)})"
+              <a href="https://wa.me/${WHATSAPP_PHONE}?text=Hola%20FerreMax!%20Quiero%20consultar%20por%20la%20oferta%20de:%20${encodeURIComponent(prod.name)}%20con%20descuento%20de%20${discountPercent}%25%20(S/.%20${discountedPrice.toFixed(2)})"
                 target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding:6px 14px; font-size:0.85rem;">
                 Aprovechar
               </a>
@@ -703,17 +703,17 @@ document.addEventListener('DOMContentLoaded', () => {
   if (upcomingGrid) {
     upcomingGrid.innerHTML = defaultUpcoming.map(prod => `
       <article class="feature-card product-card" style="position:relative;">
-        <span class="badge-discount" style="background:#D4A373; color:#140E0C; font-weight:700;">${prod.badge}</span>
+        <span class="badge-discount">${prod.badge}</span>
         <div class="product-image-container">
           <img src="${prod.img}" alt="${prod.name}" class="product-img" loading="lazy">
         </div>
         <h3>${prod.name}</h3>
         <p>${prod.desc}</p>
         <div class="product-footer">
-          <span class="product-price" style="font-size:0.95rem;">Precio Est.: S/. ${parseFloat(prod.price).toFixed(2)}</span>
-          <a href="https://wa.me/${WHATSAPP_PHONE}?text=Hola%20SUPKEIKS!%20Deseo%20que%20me%20notifiquen%20cuando%20se%20lance:%20${encodeURIComponent(prod.name)}"
+          <span class="product-price" style="font-size:0.95rem;">Precio estimado: S/. ${parseFloat(prod.price).toFixed(2)}</span>
+          <a href="https://wa.me/${WHATSAPP_PHONE}?text=Hola%20FerreMax!%20Quiero%20consultar%20cuando%20este%20disponible:%20${encodeURIComponent(prod.name)}"
             target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding:6px 14px; font-size:0.85rem;">
-            Notificarme 🔔
+            Consultar disponibilidad
           </a>
         </div>
       </article>
@@ -746,7 +746,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         const confirmSend = confirm("¿Deseas enviar también tu mensaje directamente a nuestro WhatsApp oficial para atención inmediata?");
         if (confirmSend) {
-          const waText = `🧁 *Consulta Web SUPKEIKS*%0A%0A*Nombre:* ${encodeURIComponent(nombre)}%0A*Teléfono:* ${encodeURIComponent(telefono)}%0A*Correo:* ${encodeURIComponent(correo)}%0A*Motivo:* ${encodeURIComponent(motivo)}%0A*Mensaje:* ${encodeURIComponent(mensaje)}`;
+          const waText = `🔧 *Consulta web FerreMax*%0A%0A*Nombre:* ${encodeURIComponent(nombre)}%0A*Teléfono:* ${encodeURIComponent(telefono)}%0A*Correo:* ${encodeURIComponent(correo)}%0A*Motivo:* ${encodeURIComponent(motivo)}%0A*Mensaje:* ${encodeURIComponent(mensaje)}`;
           window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${waText}`, "_blank");
         }
       }, 1200);
