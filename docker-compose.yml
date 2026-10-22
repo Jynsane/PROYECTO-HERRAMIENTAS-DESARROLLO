@@ -1,0 +1,12 @@
+services:
+  ferreteria:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: ferremax-web
+
+    ports:
+      - "8080:80"
+
+    restart: unless-stopped
