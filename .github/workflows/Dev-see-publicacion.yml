@@ -1,8 +1,8 @@
-name: 05 - Publicacion Ferreteria
+name: Publicacion Ferreteria
 
 on:
   workflow_run:
-    workflows: ["01 - Validacion de Ferreteria"]
+    workflows: ["Validacion de Ferreteria"]
     types: [completed]
     branches: [main]
 
