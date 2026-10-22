@@ -1,0 +1,35 @@
+
+name: Compatibilidad JavaScript
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  probar-javascript:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node: [20, 22]
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Verificar sintaxis JS
+        run: node --check script.js
+
+      - name: Mostrar resultado
+        run: |
+          echo "Validacion correcta"
+          echo "Node version:"
+          node --version
