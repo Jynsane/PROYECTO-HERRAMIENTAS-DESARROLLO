@@ -126,11 +126,18 @@ Proyecto desarrollado para el curso de **Herramientas de Desarrollo** — **Univ
 | **Jair Adrian Garcia Callupe** ([@Jynsane](https://github.com/Jynsane)) | Carrito de compras, filtros de catálogo, unificación responsive e integración WhatsApp | `dev-jair` |
 | **Adrian Altuna** | Sección Nosotros, historia, estadísticas y valores de marca | `dev-adrian` |
 | **See Ahn Kaarlo Polo Sanchez** | Vistas de Catálogo base, ofertas y próximos agregados | `dev-see` |
-|**Miguel Angel Nolasco Bautista** ([@Klivers](https://github.com/Klivers)) | Estructura base de contacto, canales de atención y validación de campos | `dev-klivers` |
+| **Miguel Angel Nolasco Bautista** ([@Klivers](https://github.com/Klivers)) | Módulo de Contacto para Ferretería, integración con API de WhatsApp y automatización en GitHub Actions | `dev-klivers` |
 
 ---
-
-## 📌 7. GitHub Gists Destacados
+## 🛠️ 7. Instalación y Ejecución Local (Docker)
+Para desplegar la web de la ferretería localmente usando contenedores:
+1. Asegúrate de tener instalado Docker Desktop.
+2. Clona el repositorio en tu máquina local.
+3. Abre una terminal en la raíz del proyecto y ejecuta el siguiente comando:
+   `docker-compose up -d --build`
+4. La página estará disponible en tu navegador en el puerto configurado.
+   
+## 📌 8. GitHub Gists Destacados
 
 Fragmentos modulares de código documentados y publicados para revisión académica:
 
