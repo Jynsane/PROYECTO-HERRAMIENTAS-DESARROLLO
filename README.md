@@ -43,6 +43,12 @@
   * Cálculo del total en soles (`S/.`).
   * **Consulta por WhatsApp:** Genera un mensaje estructurado con los productos seleccionados para confirmar disponibilidad y entrega.
 * **Página de Contacto:** Formulario con selector de categoría de consulta, confirmación interactiva y datos de atención.
+* **Inicio de Sesión con Roles (Usuario / Administrador):**
+  * Página `Login.html` con pestañas para **iniciar sesión** y **crear cuenta** (los registros nuevos son de tipo *cliente*).
+  * Contraseñas guardadas como hash **SHA-256** y validación de correo y contraseña segura.
+  * Menú de usuario en el header con nombre, rol y opción de cerrar sesión.
+  * **Panel de Administración** (`Admin.html`), protegido solo para administradores: resumen del negocio, alta/edición/eliminación de productos del catálogo y gestión de roles de usuarios.
+  * Cuentas de prueba: `admin@ferremax.pe / Admin123` (administrador) y `cliente@ferremax.pe / Cliente123` (cliente).
 * **Diseño 100% Responsivo:** Adaptación completa a dispositivos móviles mediante menú hamburguesa y navegación táctil accesible.
 
 ---
@@ -95,6 +101,12 @@ PROYECTO-HERRAMIENTAS-DESARROLLO/
 ├── Proximos_Agregados.html # Próximos productos
 ├── Contacto.html           # Centro de Atención, Formulario y Canales Oficiales
 ├── styles.css              # Estilos globales: paleta industrial y diseño responsivo
+├── Login.html              # Inicio de sesión y registro de clientes
+├── Admin.html              # Panel de administración (solo rol administrador)
+├── auth.js                 # Módulo de sesión: usuarios, roles y menú de usuario
+├── login.js                # Lógica de la página de Login
+├── admin.js                # Gestión de productos y usuarios del panel admin
+├── tests/auth.test.js      # Pruebas automáticas del login (GitHub Actions)
 ├── script.js               # Slider, filtros, carrito, LocalStorage y WhatsApp
 └── README.md               # Documentación General del Proyecto
 ```
@@ -124,7 +136,7 @@ Proyecto desarrollado para el curso de **Herramientas de Desarrollo** — **Univ
 | Contribuidor | Rol / Responsabilidad Principal | Rama Principal |
 | :--- | :--- | :--- |
 | **Jair Adrian Garcia Callupe** ([@Jynsane](https://github.com/Jynsane)) | Carrito de compras, filtros de catálogo, unificación responsive e integración WhatsApp | `dev-jair` |
-| **Adrian Altuna** | Sección Nosotros, historia, estadísticas y valores de marca | `dev-adrian` |
+| **Adrian Altuna Riveros** | Sección Nosotros y servicios de la ferretería, inicio de sesión con roles (usuario / administrador), panel de administración y GitHub Action de pruebas de autenticación | `dev-adrian` |
 | **See Ahn Kaarlo Polo Sanchez** | Vistas de Catálogo base, ofertas y próximos agregados | `dev-see` |
 | **Miguel Angel Nolasco Bautista** ([@Klivers](https://github.com/Klivers)) | Módulo de Contacto, integración con API de WhatsApp y automatización en GitHub Actions | `dev-klivers` |
 
