@@ -1525,6 +1525,26 @@ button {
   font-size: 1.35rem;
 }
 
+.btn-cart-whatsapp {
+  background: transparent;
+  color: #25D366;
+  border: 1px solid rgba(37, 211, 102, 0.45);
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.btn-cart-whatsapp:hover {
+  background: rgba(37, 211, 102, 0.15);
+  border-color: #25D366;
+  color: #25D366;
+  transform: translateY(-2px);
+}
+
 /* --- 3. Barra de Búsqueda y Filtros en Catálogo --- */
 .catalog-toolbar {
   max-width: 960px;

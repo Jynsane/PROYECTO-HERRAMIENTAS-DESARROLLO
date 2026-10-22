@@ -361,6 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartItemsList = document.getElementById("cartItemsList");
   const cartTotalPrice = document.getElementById("cartTotalPrice");
   const btnCheckoutCart = document.getElementById("btnCheckoutCart");
+  const btnCheckoutWhatsApp = document.getElementById("btnCheckoutWhatsApp");
 
   function getCart() {
     try {
@@ -498,9 +499,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Finalizar pedido por WhatsApp con mensaje consolidado
+  // 1. Abrir Pasarela de Pago Segura en Pestaña Aparte (Simulada bajo normas)
   if (btnCheckoutCart) {
     btnCheckoutCart.addEventListener("click", () => {
+      const cart = getCart();
+      if (cart.length === 0) {
+        alert("Tu carrito de compras está vacío. Agrega al menos un producto.");
+        return;
+      }
+      // Abrir la pasarela de pago en pestaña aparte
+      window.open("pasarela.html", "_blank");
+    });
+  }
+
+  // 2. Opción alternativa: Pedir / Coordinar por WhatsApp directamente
+  if (btnCheckoutWhatsApp) {
+    btnCheckoutWhatsApp.addEventListener("click", () => {
       const cart = getCart();
       if (cart.length === 0) {
         alert("Tu carrito de compras está vacío. Agrega al menos un producto.");

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasarela de Pago Segura | FerreMax</title>
+    <meta name="description"
+        content="Pasarela de pago segura y cifrada de FerreMax. Paga con tarjeta de débito/crédito, billeteras digitales Yape/Plin o coordina tu compra por WhatsApp.">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Hojas de Estilos -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pasarela.css">
+</head>
+
+<body class="checkout-page">
+
+    <!-- Header de la Pasarela de Pago -->
+    <header class="checkout-header">
+        <div class="checkout-header-inner">
+            <a href="index.html" class="checkout-brand" title="Volver a FerreMax">
+                <span style="font-size: 1.8rem;">🔧</span>
+                <div class="brand-logo-text">FERRE<span>MAX</span></div>
+            </a>
+
+            <div class="checkout-security-pill">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                </svg>
+                <span>Cifrado SSL 256-Bit | PCI-DSS Compliant</span>
+            </div>
+
+            <a href="Catalogo.html" class="checkout-back-link">
+                <span>← Seguir comprando</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Barra de Pasos -->
+    <div class="checkout-steps-bar">
+        <div class="checkout-steps">
+            <div class="step-item is-completed">
+                <span class="step-num">✓</span>
+                <span>1. Carrito</span>
+            </div>
+            <div class="step-divider"></div>
+            <div class="step-item is-active">
+                <span class="step-num">2</span>
+                <span>2. Datos & Pago Seguro</span>
+            </div>
+            <div class="step-divider"></div>
+            <div class="step-item">
+                <span class="step-num">3</span>
+                <span>3. Confirmación</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Estado de Carrito Vacío (Se activa si no hay productos) -->
+    <div class="checkout-empty-state" id="checkoutEmptyState" style="display: none;">
+        <span class="empty-icon">🛒</span>
+        <h2>Tu carrito está vacío</h2>
+        <p>No tienes productos agregados para proceder con el pago. Visita nuestro catálogo para agregar herramientas y
+            materiales de construcción.</p>
+        <a href="Catalogo.html" class="btn btn-primary">Explorar Catálogo FerreMax</a>
+    </div>
+
+    <!-- Contenedor Principal del Checkout en 2 Columnas -->
+    <main class="checkout-container" id="checkoutMainContainer">
+
+        <!-- ==========================================
+             COLUMNA IZQUIERDA: FORMULARIOS Y MÉTODOS
+             ========================================== -->
+        <div class="checkout-forms-column">
+
+            <!-- 1. Datos del Comprador & Facturación -->
+            <section class="checkout-card">
+                <div class="checkout-card-header">
+                    <div class="checkout-card-title">
+                        <span class="card-title-icon">👤</span>
+                        <h3>1. Datos de Contacto y Facturación</h3>
+                    </div>
+                    <span class="checkout-badge-pill">Norma SUNAT</span>
+                </div>
+
+                <!-- Tipo de Comprobante -->
+                <div class="options-pills-row">
+                    <label class="option-pill-label is-selected">
+                        <input type="radio" name="comprobanteType" id="comprobanteBoleta" value="boleta" checked>
+                        <div class="option-pill-text">
+                            <span class="option-pill-title">Boleta de Venta</span>
+                            <span class="option-pill-desc">Para personas naturales (DNI)</span>
+                        </div>
+                    </label>
+                    <label class="option-pill-label">
+                        <input type="radio" name="comprobanteType" id="comprobanteFactura" value="factura">
+                        <div class="option-pill-text">
+                            <span class="option-pill-title">Factura Electrónica</span>
+                            <span class="option-pill-desc">Para empresas o negocios (RUC)</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checkout-form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="inputFullName">Nombres y Apellidos completos <span
+                                class="required-dot">*</span></label>
+                        <input type="text" id="inputFullName" class="form-input" placeholder="Ej. Carlos Mendoza Ramos"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="inputEmail">Correo electrónico (para comprobante) <span
+                                class="required-dot">*</span></label>
+                        <input type="email" id="inputEmail" class="form-input" placeholder="ejemplo@correo.com"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="inputDocNumber">
+                            <span id="labelDocType">Documento de Identidad</span> <span class="required-dot">*</span>
+                        </label>
+                        <div style="display: flex; gap: 8px;">
+                            <select id="inputDocType" class="form-select" style="width: 100px;">
+                                <option value="DNI">DNI</option>
+                                <option value="RUC">RUC</option>
+                                <option value="CE">C.E.</option>
+                            </select>
+                            <input type="text" id="inputDocNumber" class="form-input" placeholder="Número de documento"
+                                maxlength="11" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="inputPhone">Teléfono o WhatsApp <span
+                                class="required-dot">*</span></label>
+                        <input type="tel" id="inputPhone" class="form-input" placeholder="Ej. 987 654 321"
+                            maxlength="12" required>
+                    </div>
+
+                    <!-- Campos adicionales si selecciona Factura -->
+                    <div class="checkout-form-grid full-span" id="facturaFields"
+                        style="display: none; margin-top: 6px;">
+                        <div class="form-group">
+                            <label class="form-label" for="inputRazonSocial">Razón Social de la Empresa <span
+                                    class="required-dot">*</span></label>
+                            <input type="text" id="inputRazonSocial" class="form-input"
+                                placeholder="Ej. Constructora del Norte S.A.C.">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="inputDireccionFiscal">Dirección Fiscal de la Empresa</label>
+                            <input type="text" id="inputDireccionFiscal" class="form-input"
+                                placeholder="Av. Los Ingenieros 340, Lima">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Modalidad de Entrega -->
+            <section class="checkout-card">
+                <div class="checkout-card-header">
+                    <div class="checkout-card-title">
+                        <span class="card-title-icon">🚚</span>
+                        <h3>2. Modalidad de Entrega</h3>
+                    </div>
+                </div>
+
+                <div class="options-pills-row">
+                    <label class="option-pill-label is-selected">
+                        <input type="radio" name="deliveryMethod" id="deliveryPickup" value="pickup" checked>
+                        <div class="option-pill-text">
+                            <span class="option-pill-title">Retiro en Tienda</span>
+                            <span class="option-pill-desc">¡Gratis! Almacén Central FerreMax</span>
+                        </div>
+                    </label>
+                    <label class="option-pill-label">
+                        <input type="radio" name="deliveryMethod" id="deliveryShipping" value="delivery">
+                        <div class="option-pill-text">
+                            <span class="option-pill-title">Envío a Domicilio</span>
+                            <span class="option-pill-desc">S/. 15.00 (Entrega en 24 a 48 hrs)</span>
+                        </div>
+                    </label>
+                </div>
+
+                <!-- Campos de Dirección si elige Envío -->
+                <div class="checkout-form-grid" id="deliveryFields" style="display: none;">
+                    <div class="form-group full-span">
+                        <label class="form-label" for="inputAddress">Dirección exacta de entrega (Calle, Avenida, Mz,
+                            Lote) <span class="required-dot">*</span></label>
+                        <input type="text" id="inputAddress" class="form-input"
+                            placeholder="Ej. Jr. Las Malvinas 450, Urb. San José">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="inputCity">Distrito / Ciudad <span
+                                class="required-dot">*</span></label>
+                        <input type="text" id="inputCity" class="form-input"
+                            placeholder="Ej. Lima, Callao, San Juan de Lurigancho">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="inputReference">Referencia para el transportista</label>
+                        <input type="text" id="inputReference" class="form-input"
+                            placeholder="Ej. A 2 cuadras del mercado central">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Métodos de Pago Disponibles -->
+            <section class="checkout-card">
+                <div class="checkout-card-header">
+                    <div class="checkout-card-title">
+                        <span class="card-title-icon">💳</span>
+                        <h3>3. Método de Pago</h3>
+                    </div>
+                    <span class="checkout-badge-pill">100% Protegido</span>
+                </div>
+
+                <!-- Tabs de Selección de Método -->
+                <div class="payment-tabs">
+                    <button type="button" class="payment-tab-btn is-active" data-tab="card">
+                        <span class="tab-icon">💳</span>
+                        <span class="tab-title">Tarjeta Débito / Crédito</span>
+                        <span class="tab-sub">Visa, Mastercard, Amex</span>
+                    </button>
+                    <button type="button" class="payment-tab-btn" data-tab="wallet">
+                        <span class="tab-icon">📱</span>
+                        <span class="tab-title">Billetera Digital</span>
+                        <span class="tab-sub">Yape o Plin QR</span>
+                    </button>
+                    <button type="button" class="payment-tab-btn" data-tab="whatsapp">
+                        <span class="tab-icon">💬</span>
+                        <span class="tab-title">Coordinar por WhatsApp</span>
+                        <span class="tab-sub">Atención personalizada</span>
+                    </button>
+                </div>
+
+                <!-- PANEL 1: TARJETA DE CRÉDITO O DÉBITO -->
+                <div class="payment-content-panel is-active" id="panelCard">
+                    <!-- Vista previa de Tarjeta Virtual 3D -->
+                    <div class="credit-card-preview-wrap">
+                        <div class="credit-card-preview" id="creditCardPreview">
+                            <div class="card-preview-top">
+                                <div class="card-chip"></div>
+                                <div class="card-brand-logo" id="cardBrandLogo">VISA</div>
+                            </div>
+                            <div class="card-preview-number" id="cardPreviewNumber">•••• •••• •••• ••••</div>
+                            <div class="card-preview-bottom">
+                                <div>
+                                    <div class="card-preview-label">Titular de la tarjeta</div>
+                                    <div class="card-preview-val" id="cardPreviewName">NOMBRE TITULAR</div>
+                                </div>
+                                <div>
+                                    <div class="card-preview-label">Vence</div>
+                                    <div class="card-preview-val" id="cardPreviewExp">MM/AA</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de Tarjeta -->
+                    <div class="checkout-form-grid">
+                        <div class="form-group full-span">
+                            <label class="form-label" for="inputCardNumber">Número de Tarjeta <span
+                                    class="required-dot">*</span></label>
+                            <input type="text" id="inputCardNumber" class="form-input" placeholder="4557 0000 0000 0000"
+                                maxlength="19" autocomplete="cc-number">
+                        </div>
+
+                        <div class="form-group full-span">
+                            <label class="form-label" for="inputCardName">Nombre del Titular (como aparece en la
+                                tarjeta) <span class="required-dot">*</span></label>
+                            <input type="text" id="inputCardName" class="form-input" placeholder="Ej. CARLOS MENDOZA"
+                                autocomplete="cc-name">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="inputCardExp">Fecha de Expiración <span
+                                    class="required-dot">*</span></label>
+                            <input type="text" id="inputCardExp" class="form-input" placeholder="MM/AA" maxlength="5"
+                                autocomplete="cc-exp">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="inputCardCvv">Código CVV / CVC <span
+                                    class="required-dot">*</span></label>
+                            <input type="password" id="inputCardCvv" class="form-input" placeholder="123" maxlength="4"
+                                autocomplete="cc-csc">
+                        </div>
+
+                        <div class="form-group full-span">
+                            <label class="form-label" for="selectInstallments">Cuotas de pago</label>
+                            <select id="selectInstallments" class="form-select">
+                                <option value="1">1 cuota directa (Sin intereses)</option>
+                                <option value="3">3 cuotas (Sin intereses)</option>
+                                <option value="6">6 cuotas fijas</option>
+                                <option value="12">12 cuotas fijas</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="accepted-cards-row">
+                        <span class="accepted-card-badge">VISA</span>
+                        <span class="accepted-card-badge">MASTERCARD</span>
+                        <span class="accepted-card-badge">AMERICAN EXPRESS</span>
+                        <span class="accepted-card-badge">DINERS</span>
+                    </div>
+                </div>
+
+                <!-- PANEL 2: BILLETERA DIGITAL (YAPE / PLIN) -->
+                <div class="payment-content-panel" id="panelWallet">
+                    <div class="wallets-selector-row">
+                        <button type="button" class="wallet-choice-btn wallet-yape is-active" id="btnWalletYape">
+                            <span>🟣 Yape</span>
+                        </button>
+                        <button type="button" class="wallet-choice-btn wallet-plin" id="btnWalletPlin">
+                            <span>🔵 Plin</span>
+                        </button>
+                    </div>
+
+                    <div class="wallet-qr-card">
+                        <p style="font-size: 0.9rem; color: var(--color-cream-light);">
+                            Escanea el código QR con tu aplicación móvil de <strong>Yape</strong> o
+                            <strong>Plin</strong>:
+                        </p>
+
+                        <div class="qr-frame">
+                            <div id="walletQrImg">
+                                <!-- QR Dinámico generado por script -->
+                            </div>
+                            <span class="qr-amount-tag" id="walletQrAmount">Total a pagar: S/. 0.00</span>
+                        </div>
+
+                        <div class="wallet-phone-box">
+                            <span>O transfiere al número:</span>
+                            <span class="phone-val">984 110 884</span>
+                            <button type="button" class="btn-copy-phone" id="btnCopyPhone">Copiar número</button>
+                        </div>
+
+                        <p style="font-size: 0.8rem; color: var(--color-cream-muted);">Titular registrado:
+                            <strong>FERREMAX S.A.C.</strong></p>
+
+                        <ol class="wallet-steps-list">
+                            <li>1. Abre tu app Yape o Plin en tu smartphone.</li>
+                            <li>2. Escanea el código QR o transfiere el monto total al 984 110 884.</li>
+                            <li>3. Ingresa abajo el <strong>Código de Operación</strong> (6 u 8 dígitos) que aparece en
+                                tu comprobante.</li>
+                        </ol>
+
+                        <div class="form-group" style="width: 100%; max-width: 360px; margin-top: 10px;">
+                            <label class="form-label" for="inputWalletOpCode" style="text-align: left;">
+                                Código de Operación o Aprobación <span class="required-dot">*</span>
+                            </label>
+                            <input type="text" id="inputWalletOpCode" class="form-input" placeholder="Ej. 849201"
+                                maxlength="10">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL 3: CONTINUAR POR WHATSAPP (SOLICITADO) -->
+                <div class="payment-content-panel" id="panelWhatsApp">
+                    <div class="whatsapp-checkout-box">
+                        <div class="wa-box-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.076-2.029-.475-1.708-.704-2.813-2.457-2.899-2.572-.084-.116-.693-.924-.693-1.762 0-.838.438-1.25.594-1.423.156-.172.342-.216.456-.216.114 0 .228.001.328.006.105.006.246-.04.384.292.144.348.492 1.2.535 1.288.043.088.072.19.014.306-.058.116-.087.189-.173.29-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.972 1.21.669.596 1.233.781 1.408.868.174.088.276.073.379-.044.102-.116.438-.51.554-.685.116-.175.233-.146.39-.088.157.058.995.469 1.167.555.172.086.286.13.329.202.043.073.043.42-.101.825zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.396C8.423 21.499 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
+                            </svg>
+                        </div>
+                        <h4 class="wa-box-title">¿Prefieres coordinar tu compra directamente por WhatsApp?</h4>
+                        <p class="wa-box-desc">
+                            Un asesor de FerreMax revisará los productos de tu carrito, verificará disponibilidad
+                            inmediata en almacén y te asistirá con transferencias bancarias directas (BCP, BBVA,
+                            Interbank) o pago contraentrega.
+                        </p>
+                        <button type="button" class="btn-wa-direct" id="btnDirectWhatsApp">
+                            <span>Enviar Carrito a WhatsApp Oficial</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ==========================================
+             COLUMNA DERECHA: RESUMEN DE LA COMPRA
+             ========================================== -->
+        <aside class="checkout-summary-column">
+            <div class="checkout-summary-card">
+                <div class="checkout-card-header">
+                    <div class="checkout-card-title">
+                        <span class="card-title-icon">🛒</span>
+                        <h3>Resumen del Pedido</h3>
+                    </div>
+                </div>
+
+                <!-- Lista de Productos en el Carrito -->
+                <div class="summary-items-list" id="summaryItemsList">
+                    <!-- Inyectado dinámicamente con imágenes y controles -->
+                </div>
+
+                <!-- Cupón de Descuento -->
+                <div class="coupon-box">
+                    <input type="text" id="inputCoupon" class="coupon-input" placeholder="CÓDIGO DE CUPÓN">
+                    <button type="button" id="btnApplyCoupon" class="btn-apply-coupon">Aplicar</button>
+                </div>
+                <div id="couponMsg" style="font-size: 0.78rem; margin-top: -10px; margin-bottom: 12px;"></div>
+
+                <!-- Desglose de Precios -->
+                <div class="summary-totals-breakdown">
+                    <div class="breakdown-row">
+                        <span>Subtotal de productos:</span>
+                        <span id="summarySubtotal">S/. 0.00</span>
+                    </div>
+                    <div class="breakdown-row is-discount" id="summaryDiscountRow" style="display: none;">
+                        <span>Descuento aplicado:</span>
+                        <span id="summaryDiscount">- S/. 0.00</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span>IGV (18% incluido según ley):</span>
+                        <span id="summaryIgv">S/. 0.00</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span>Costo de envío / despacho:</span>
+                        <span id="summaryShipping">¡Gratis!</span>
+                    </div>
+                    <div class="breakdown-total">
+                        <span>Total a Pagar:</span>
+                        <span class="total-amount" id="summaryTotal">S/. 0.00</span>
+                    </div>
+                </div>
+
+                <!-- Términos y Condiciones -->
+                <div class="terms-row">
+                    <input type="checkbox" id="acceptTerms" checked required>
+                    <label for="acceptTerms">
+                        He leído y acepto los <a href="#"
+                            onclick="alert('Términos y Condiciones FerreMax: Garantía oficial de productos, devoluciones dentro de 7 días con boleta/factura y compras 100% seguras.'); return false;">Términos
+                            y Condiciones</a> y la <a href="#"
+                            onclick="alert('Política de Protección de Datos Personales conforme a la Ley N° 29733.'); return false;">Política
+                            de Privacidad</a>.
+                    </label>
+                </div>
+
+                <!-- Botón de Pago Principal -->
+                <button type="button" class="btn-pay-now" id="btnProcessPayment">
+                    <span>Pagar S/. <span id="payBtnAmount">0.00</span></span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+                    </svg>
+                </button>
+
+                <!-- Sellos de Confianza y Garantía -->
+                <div class="summary-trust-badges">
+                    <div class="trust-item">
+                        <span class="trust-icon">🔒</span>
+                        <span>Transacción segura y cifrada</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">📦</span>
+                        <span>Despacho garantizado 24h</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">🛡️</span>
+                        <span>Garantía oficial FerreMax</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">📑</span>
+                        <span>Comprobante válido SUNAT</span>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- ==========================================================================
+         MODAL DE PROCESAMIENTO / SIMULACIÓN 3D SECURE
+         ========================================================================== -->
+    <div class="payment-processing-modal" id="processingModal">
+        <div class="processing-box">
+            <div class="spinner-circle"></div>
+            <h3 class="processing-title">Procesando Pago Seguro</h3>
+            <p class="processing-subtitle">Por favor no cierres ni recargues esta pestaña mientras nos comunicamos con
+                la pasarela bancaria.</p>
+            <div class="processing-steps-log" id="processingStepLog">
+                <!-- Log interactivo -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         OVERLAY / VOUCHER DE COMPRA EXITOSA (COMPROBANTE OFICIAL)
+         ========================================================================== -->
+    <div class="success-voucher-overlay" id="voucherOverlay">
+        <div class="voucher-card">
+            <div class="voucher-header">
+                <div class="voucher-success-icon">✓</div>
+                <h2>¡Pago Aprobado con Éxito!</h2>
+                <p style="color: #64748B; font-size: 0.88rem;">Tu orden ha sido procesada y registrada en el sistema de
+                    FerreMax.</p>
+                <div class="voucher-order-badge">Código de Orden: <span id="vOrderId">#FMX-2026-0000</span></div>
+            </div>
+
+            <div class="voucher-body">
+                <div class="voucher-row">
+                    <span class="v-label">Fecha y Hora:</span>
+                    <span class="v-value" id="vDate">-</span>
+                </div>
+                <div class="voucher-row">
+                    <span class="v-label">Cliente:</span>
+                    <span class="v-value" id="vClientName">-</span>
+                </div>
+                <div class="voucher-row">
+                    <span class="v-label">Documento:</span>
+                    <span class="v-value"><span id="vDocType">DNI</span>: <span id="vDocNum">-</span></span>
+                </div>
+                <div class="voucher-row">
+                    <span class="v-label">Modalidad:</span>
+                    <span class="v-value" id="vDelivery">-</span>
+                </div>
+                <div class="voucher-row">
+                    <span class="v-label">Método de Pago:</span>
+                    <span class="v-value" id="vMethod">-</span>
+                </div>
+                <div class="voucher-row">
+                    <span class="v-label">Código de Autorización:</span>
+                    <span class="v-value" id="vAuthCode">AUT-948210</span>
+                </div>
+                <div class="voucher-row total-row">
+                    <span class="v-label">Total Pagado:</span>
+                    <span class="v-value" id="vTotal">S/. 0.00</span>
+                </div>
+            </div>
+
+            <div class="voucher-actions">
+                <button type="button" class="btn-wa-voucher" id="btnSendVoucherWhatsApp">
+                    <span>Enviar Comprobante por WhatsApp</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.076-2.029-.475-1.708-.704-2.813-2.457-2.899-2.572-.084-.116-.693-.924-.693-1.762 0-.838.438-1.25.594-1.423.156-.172.342-.216.456-.216.114 0 .228.001.328.006.105.006.246-.04.384.292.144.348.492 1.2.535 1.288.043.088.072.19.014.306-.058.116-.087.189-.173.29-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.972 1.21.669.596 1.233.781 1.408.868.174.088.276.073.379-.044.102-.116.438-.51.554-.685.116-.175.233-.146.39-.088.157.058.995.469 1.167.555.172.086.286.13.329.202.043.073.043.42-.101.825zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.396C8.423 21.499 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
+                    </svg>
+                </button>
+                <button type="button" class="btn-print-voucher" id="btnPrintVoucher">
+                    <span>Imprimir / Descargar Voucher</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" />
+                    </svg>
+                </button>
+                <a href="index.html" class="btn-return-store">← Volver a la Tienda FerreMax</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="pasarela.js"></script>
+</body>
+
+</html>
