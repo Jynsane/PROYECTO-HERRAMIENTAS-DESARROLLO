@@ -1,0 +1,46 @@
+
+name: Validacion de Ferreteria
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validar-paginas:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Revisar paginas y recursos
+        shell: bash
+        run: |
+          archivos=(
+            index.html
+            Catalogo.html
+            Contacto.html
+            Ofertas_Catalogo.html
+            styles.css
+            script.js
+          )
+
+          errores=0
+
+          for archivo in "${archivos[@]}"; do
+            if [ -s "$archivo" ]; then
+              echo "OK: $archivo"
+            else
+              echo "ERROR: $archivo no existe o esta vacio"
+              errores=$((errores + 1))
+            fi
+          done
+
+          if [ "$errores" -gt 0 ]; then
+            exit 1
+          fi
+
+          echo "Validacion completada"
