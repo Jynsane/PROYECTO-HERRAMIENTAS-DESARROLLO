@@ -1,0 +1,75 @@
+name: Pruebas de Autenticacion
+
+on:
+  push:
+    branches: [main, dev-adrian]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  probar-login:
+    name: Login y roles (usuario / administrador)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Verificar sintaxis de los scripts de sesion
+        run: |
+          node --check auth.js
+          node --check login.js
+          node --check admin.js
+
+      - name: Ejecutar pruebas de autenticacion
+        run: node --test tests/*.test.js
+
+  revisar-paginas:
+    name: Paginas protegidas y enlaces internos
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Verificar que cada pagina cargue el modulo de sesion
+        shell: bash
+        run: |
+          errores=0
+          for pagina in *.html; do
+            [ "$pagina" = "pasarela.html" ] && continue
+            if grep -q 'src="auth.js"' "$pagina"; then
+              echo "OK: $pagina carga auth.js"
+            else
+              echo "ERROR: $pagina no carga auth.js"
+              errores=$((errores + 1))
+            fi
+          done
+
+          if ! grep -q 'data-requiere-rol="admin"' Admin.html; then
+            echo "ERROR: Admin.html no esta protegido para administradores"
+            errores=$((errores + 1))
+          fi
+
+          [ "$errores" -eq 0 ] || exit 1
+
+      - name: Verificar enlaces internos entre paginas
+        shell: bash
+        run: |
+          errores=0
+          for enlace in $(grep -ohE 'href="[A-Za-z_]+\.html' *.html | sed 's/href="//' | sort -u); do
+            if [ -f "$enlace" ]; then
+              echo "OK: $enlace"
+            else
+              echo "ERROR: enlace roto hacia $enlace"
+              errores=$((errores + 1))
+            fi
+          done
+          [ "$errores" -eq 0 ] || exit 1
+          echo "Todos los enlaces internos existen"
