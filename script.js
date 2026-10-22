@@ -350,6 +350,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Acceso compartido al catálogo para el panel de administración (admin.js)
+  window.FerreMaxCatalog = {
+    KEY: "ferremax_catalog_v1",
+    get: getCatalogProducts,
+    reset() {
+      localStorage.setItem("ferremax_catalog_v1", JSON.stringify(defaultCatalog));
+    }
+  };
+
   // ==========================================================================
   // 5. SISTEMA DEL CARRITO DE COMPRAS
   // ==========================================================================
