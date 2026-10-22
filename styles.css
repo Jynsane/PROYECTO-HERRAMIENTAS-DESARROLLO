@@ -1525,6 +1525,26 @@ button {
   font-size: 1.35rem;
 }
 
+.btn-cart-whatsapp {
+  background: transparent;
+  color: #25D366;
+  border: 1px solid rgba(37, 211, 102, 0.45);
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.btn-cart-whatsapp:hover {
+  background: rgba(37, 211, 102, 0.15);
+  border-color: #25D366;
+  color: #25D366;
+  transform: translateY(-2px);
+}
+
 /* --- 3. Barra de Búsqueda y Filtros en Catálogo --- */
 .catalog-toolbar {
   max-width: 960px;
@@ -1831,4 +1851,28 @@ button {
   .cart-drawer {
     max-width: 100%;
   }
+}
+
+/* Micro-interacciones y accesibilidad */
+.btn-pulsing {
+  animation: buttonPulse 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes buttonPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
