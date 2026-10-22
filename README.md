@@ -126,7 +126,7 @@ Proyecto desarrollado para el curso de **Herramientas de Desarrollo** — **Univ
 | **Jair Adrian Garcia Callupe** ([@Jynsane](https://github.com/Jynsane)) | Carrito de compras, filtros de catálogo, unificación responsive e integración WhatsApp | `dev-jair` |
 | **Adrian Altuna** | Sección Nosotros, historia, estadísticas y valores de marca | `dev-adrian` |
 | **See Ahn Kaarlo Polo Sanchez** | Vistas de Catálogo base, ofertas y próximos agregados | `dev-see` |
-| **Miguel Angel Nolasco Bautista** ([@Klivers](https://github.com/Klivers)) | Módulo de Contacto para Ferretería, integración con API de WhatsApp y automatización en GitHub Actions | `dev-klivers` |
+| **Miguel Angel Nolasco Bautista** ([@Klivers](https://github.com/Klivers)) | Módulo de Contacto, integración con API de WhatsApp y automatización en GitHub Actions | `dev-klivers` |
 
 ---
 ## 🛠️ 7. Instalación y Ejecución Local (Docker)
