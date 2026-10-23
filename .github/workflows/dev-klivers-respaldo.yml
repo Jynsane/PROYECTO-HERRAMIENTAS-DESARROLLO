@@ -1,0 +1,37 @@
+name: Respaldo de Ferreteria
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  preparar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Verificar pagina principal
+        run: test -s index.html
+
+  respaldar:
+    needs: preparar
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Crear respaldo ZIP
+        run: |
+          zip -r ferreteria-backup.zip . \
+            -x ".git/*" ".github/*"
+
+      - name: Guardar respaldo
+        uses: actions/upload-artifact@v4
+        with:
+          name: respaldo-ferreteria
+          path: ferreteria-backup.zip
+          retention-days: 7
