@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ferremax-pod
+  labels:
+    app: ferremax
+spec:
+  containers:
+    - name: ferremax-app
+      image: ferremax:latest
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ferremax-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: ferremax
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80

@@ -9,3 +9,5 @@ README.md
 .env
 .env.*
 tests
+k8s*.yml
+k8s*.yaml

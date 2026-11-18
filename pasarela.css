@@ -1,9 +1,4 @@
-/* ==========================================================================
-   FerreMax - Pasarela de Pago Segura Simulada | Hoja de Estilos
-   Diseño de Alta Calidad: Fintech / E-commerce Seguro, Moderno y Confiable
-   ========================================================================== */
 
-/* Layout Principal de la Pasarela */
 .checkout-page {
   background-color: var(--color-dark-bg);
   min-height: 100vh;
@@ -12,7 +7,7 @@
   color: var(--color-text-light);
 }
 
-/* Header Minimalista y Seguro de Pasarela */
+
 .checkout-header {
   background: rgba(27, 39, 50, 0.95);
   backdrop-filter: blur(12px);
