@@ -26,7 +26,11 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Verificar sintaxis JS
-        run: node --check script.js
+        run: |
+          for archivo in *.js; do
+            node --check "$archivo"
+            echo "OK: $archivo"
+          done
 
       - name: Mostrar resultado
         run: |

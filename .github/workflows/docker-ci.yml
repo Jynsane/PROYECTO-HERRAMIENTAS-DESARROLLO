@@ -2,7 +2,13 @@ name: CI Docker Ferreteria
 
 on:
   push:
-    branches: [ "main", "dev" ]
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   build-docker:
@@ -12,7 +18,22 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Construir imagen de Docker
-        run: docker build -t ferreteria-web:latest .
+        run: docker build -f dockerfile -t ferreteria-web:latest .
 
       - name: Verificar imagen creada
-        run: docker images
+        run: docker images ferreteria-web
+
+      - name: Iniciar contenedor
+        run: docker run -d --name ferremax-web -p 8080:80 ferreteria-web:latest
+
+      - name: Verificar que la pagina responde
+        run: |
+          sleep 3
+          docker ps --filter name=ferremax-web
+          curl -sf http://localhost:8080/index.html > /dev/null
+          curl -sf http://localhost:8080/Login.html > /dev/null
+          echo "El contenedor sirve la pagina correctamente"
+
+      - name: Detener contenedor
+        if: always()
+        run: docker rm -f ferremax-web

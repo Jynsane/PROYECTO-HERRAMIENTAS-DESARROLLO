@@ -1,0 +1,99 @@
+name: CI Kubernetes
+
+on:
+  push:
+    branches: [main, dev-adrian-actions]
+    paths:
+      - "k8s.yml"
+      - "dockerfile"
+      - "*.html"
+      - "*.css"
+      - "*.js"
+      - ".github/workflows/dev-adrian-kubernetes.yml"
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Si se suben cambios seguidos, solo se mantiene la ejecucion mas reciente
+concurrency:
+  group: kubernetes-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validar-manifiesto:
+    name: Validar manifiesto k8s.yml
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar kubeconform
+        run: |
+          curl -sSL https://github.com/yannh/kubeconform/releases/download/v0.6.7/kubeconform-linux-amd64.tar.gz | tar xz
+          sudo mv kubeconform /usr/local/bin/
+
+      - name: Validar Pod y Service contra el esquema de Kubernetes
+        run: kubeconform -strict -summary -output text k8s.yml
+
+  desplegar-en-kubernetes:
+    name: Desplegar y probar en Kubernetes
+    needs: validar-manifiesto
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Construir imagen de la ferreteria
+        run: docker build -f dockerfile -t ferremax:latest .
+
+      - name: Crear cluster de Kubernetes de prueba (kind)
+        uses: helm/kind-action@v1
+        with:
+          cluster_name: ferremax
+
+      - name: Cargar la imagen en el cluster
+        run: kind load docker-image ferremax:latest --name ferremax
+
+      - name: Aplicar k8s.yml
+        run: kubectl apply -f k8s.yml
+
+      - name: Esperar a que el Pod este listo
+        run: kubectl wait --for=condition=Ready pod -l app=ferremax --timeout=120s
+
+      - name: Mostrar Pods y Services
+        run: |
+          kubectl get pods -o wide
+          kubectl get services
+          kubectl describe service ferremax-service
+
+      - name: Probar que la pagina responde a traves del Service
+        shell: bash
+        run: |
+          kubectl port-forward service/ferremax-service 8080:8080 >/dev/null 2>&1 &
+          sleep 5
+
+          errores=0
+          for pagina in index.html Catalogo.html Login.html Admin.html Contacto.html; do
+            codigo=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8080/$pagina")
+            if [ "$codigo" = "200" ]; then
+              echo "OK ($codigo): $pagina"
+            else
+              echo "ERROR ($codigo): $pagina"
+              errores=$((errores + 1))
+            fi
+          done
+
+          [ "$errores" -eq 0 ] || exit 1
+          echo "La aplicacion responde correctamente desde Kubernetes"
+
+      - name: Mostrar eventos si algo falla
+        if: failure()
+        run: |
+          kubectl get events --sort-by=.metadata.creationTimestamp
+          kubectl logs -l app=ferremax --tail=50
