@@ -24,8 +24,17 @@ jobs:
             Catalogo.html
             Contacto.html
             Ofertas_Catalogo.html
+            Proximos_Agregados.html
+            Login.html
+            Admin.html
+            pasarela.html
             styles.css
+            pasarela.css
             script.js
+            pasarela.js
+            dockerfile
+            docker-compose.yml
+            k8s.yml
           )
 
           errores=0
