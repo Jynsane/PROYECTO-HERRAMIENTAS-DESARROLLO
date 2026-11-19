@@ -9,6 +9,11 @@
 [![UTP](https://img.shields.io/badge/UTP-Ciclo_8-red?style=for-the-badge)](https://www.utp.edu.pe/)
 [![Status](https://img.shields.io/badge/Avance-1.0_Completado-success?style=for-the-badge)]()
 
+[![CI Kubernetes](https://github.com/Jynsane/PROYECTO-HERRAMIENTAS-DESARROLLO/actions/workflows/dev-adrian-kubernetes.yml/badge.svg)](https://github.com/Jynsane/PROYECTO-HERRAMIENTAS-DESARROLLO/actions/workflows/dev-adrian-kubernetes.yml)
+[![CI Docker](https://github.com/Jynsane/PROYECTO-HERRAMIENTAS-DESARROLLO/actions/workflows/docker-ci.yml/badge.svg)](https://github.com/Jynsane/PROYECTO-HERRAMIENTAS-DESARROLLO/actions/workflows/docker-ci.yml)
+[![Pruebas de Autenticacion](https://github.com/Jynsane/PROYECTO-HERRAMIENTAS-DESARROLLO/actions/workflows/dev-adrian-autenticacion.yml/badge.svg)](https://github.com/Jynsane/PROYECTO-HERRAMIENTAS-DESARROLLO/actions/workflows/dev-adrian-autenticacion.yml)
+[![Validacion](https://github.com/Jynsane/PROYECTO-HERRAMIENTAS-DESARROLLO/actions/workflows/dev-jair-validacion.yml/badge.svg)](https://github.com/Jynsane/PROYECTO-HERRAMIENTAS-DESARROLLO/actions/workflows/dev-jair-validacion.yml)
+
 <br>
 
 
@@ -136,7 +141,7 @@ Proyecto desarrollado para el curso de **Herramientas de Desarrollo** — **Univ
 | Contribuidor | Rol / Responsabilidad Principal | Rama Principal |
 | :--- | :--- | :--- |
 | **Jair Adrian Garcia Callupe** ([@Jynsane](https://github.com/Jynsane)) | Carrito de compras, filtros de catálogo, unificación responsive e integración WhatsApp | `dev-jair` |
-| **Adrian Altuna Riveros** | Sección Nosotros y servicios de la ferretería, inicio de sesión con roles (usuario / administrador), panel de administración y GitHub Action de pruebas de autenticación | `dev-adrian` |
+| **Adrian Altuna Riveros** | Sección Nosotros y servicios de la ferretería, inicio de sesión con roles (usuario / administrador), panel de administración, revisión y configuración de los workflows de GitHub Actions (Docker y Kubernetes) | `dev-adrian` |
 | **See Ahn Kaarlo Polo Sanchez** | Vistas de Catálogo base, ofertas y próximos agregados | `dev-see` |
 | **Miguel Angel Nolasco Bautista** ([@Klivers](https://github.com/Klivers)) | Módulo de Contacto, integración con API de WhatsApp y automatización en GitHub Actions | `dev-klivers` |
 
@@ -148,8 +153,24 @@ Para desplegar la web de la ferretería localmente usando contenedores:
 3. Abre una terminal en la raíz del proyecto y ejecuta el siguiente comando:
    `docker-compose up -d --build`
 4. La página estará disponible en tu navegador en el puerto configurado.
-   
-## 📌 8. GitHub Gists Destacados
+
+## 🤖 8. Integración Continua (GitHub Actions)
+
+Cada vez que se sube un cambio o se abre un Pull Request hacia `main`, GitHub ejecuta automáticamente estos workflows:
+
+| Workflow | Archivo | ¿Qué verifica? |
+| :--- | :--- | :--- |
+| **Validacion de Ferreteria** | `dev-jair-validacion.yml` | Que existan las páginas, estilos, scripts y archivos de Docker y Kubernetes |
+| **Compatibilidad JavaScript** | `dev-jair-compatibilidad.yml` | Sintaxis de todos los archivos `.js` en Node 20 y 22 |
+| **Pruebas de Autenticacion** | `dev-adrian-autenticacion.yml` | Pruebas del login con roles, páginas protegidas y enlaces internos |
+| **CI Docker Ferreteria** | `docker-ci.yml` | Construye la imagen, levanta el contenedor y comprueba que la página responda |
+| **CI Kubernetes** | `dev-adrian-kubernetes.yml` | Valida `k8s.yml`, despliega el Pod y el Service en un clúster de prueba (kind) y prueba la web |
+| **Publicacion Ferreteria** | `Dev-see-publicacion.yml` | Publica la web en GitHub Pages cuando la validación pasa en `main` |
+| **Respaldo de Ferreteria** | `dev-klivers-respaldo.yml` | Genera un respaldo ZIP del proyecto como artefacto |
+
+**Flujo de trabajo del equipo:** cada integrante trabaja en su rama `dev-<nombre>`, abre un Pull Request hacia `main` y solo se hace el merge cuando los workflows están en verde.
+
+## 📌 9. GitHub Gists Destacados
 
 Fragmentos modulares de código documentados y publicados para revisión académica:
 
