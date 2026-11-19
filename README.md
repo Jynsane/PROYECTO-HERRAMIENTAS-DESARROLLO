@@ -48,6 +48,7 @@
   * Cálculo del total en soles (`S/.`).
   * **Consulta por WhatsApp:** Genera un mensaje estructurado con los productos seleccionados para confirmar disponibilidad y entrega.
 * **Página de Contacto:** Formulario con selector de categoría de consulta, confirmación interactiva y datos de atención.
+* **Reseñas de Productos:** Los usuarios con sesión iniciada pueden reseñar herramientas del catálogo y adjuntar una imagen; las reseñas se guardan en el navegador.
 * **Inicio de Sesión con Roles (Usuario / Administrador):**
   * Página `Login.html` con pestañas para **iniciar sesión** y **crear cuenta** (los registros nuevos son de tipo *cliente*).
   * Contraseñas guardadas como hash **SHA-256** y validación de correo y contraseña segura.
@@ -105,13 +106,16 @@ PROYECTO-HERRAMIENTAS-DESARROLLO/
 ├── Ofertas_Catalogo.html   # Productos con descuentos dinámicos
 ├── Proximos_Agregados.html # Próximos productos
 ├── Contacto.html           # Centro de Atención, Formulario y Canales Oficiales
+├── Resenas.html            # Reseñas de productos
 ├── styles.css              # Estilos globales: paleta industrial y diseño responsivo
 ├── Login.html              # Inicio de sesión y registro de clientes
 ├── Admin.html              # Panel de administración (solo rol administrador)
 ├── auth.js                 # Módulo de sesión: usuarios, roles y menú de usuario
 ├── login.js                # Lógica de la página de Login
 ├── admin.js                # Gestión de productos y usuarios del panel admin
+├── resenas.js              # Publicación y visualización local de reseñas
 ├── tests/auth.test.js      # Pruebas automáticas del login (GitHub Actions)
+├── tests/reviews.test.js   # Pruebas automáticas de reseñas
 ├── script.js               # Slider, filtros, carrito, LocalStorage y WhatsApp
 └── README.md               # Documentación General del Proyecto
 ```
